@@ -1,0 +1,33 @@
+
+Questo progetto è nato da una passione e come tale ho deciso che debba rimanere.
+
+FAQ:
+1) Come importare il progetto da github:
+
+mkdir ~/ildn-hub
+cd ~/ildn-hub
+git clone https://fdaluisio@github.com/fdaluisio/ildn-hub.git
+
+
+2) Installare il plugin GIT per Eclipse
+
+seguire i passi della guida a questo indirizzo:
+http://www.eclipse.org/egit/
+
+3) Importare il progetto ildn-git in Eclipse
+Se non si è ancora eseguita l'installazione del pligin GIT seguire il passo 2).
+
+File -> Import
+Selezionare 'Project from Git' quindi next
+Cliccare 'Add'
+Cliccare 'Browse...'
+Selezionare la cartella ~/ildn-hub
+Cliccare 'Ok'
+Cliccare 'Search'
+Appare ora la cartella ~/ildn-hub/.git
+Selezionare la cartella ~/ildn-hub/.git
+Cliccare 'Next'
+Selezionare 'fedorait' oppure 'ildn-hub' a seconda dei casi
+Premere 'Finish'
+
+

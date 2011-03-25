@@ -10,24 +10,25 @@ git clone https://fdaluisio@github.com/fdaluisio/ildn-hub.git
 
 
 2) Installare il plugin GIT per Eclipse
-
 seguire i passi della guida a questo indirizzo:
 http://www.eclipse.org/egit/
 
-3) Importare il progetto ildn-git in Eclipse
+
+3) Installare l'Android SDK
+seguire i passi della guida a questo indirizzo:
+http://developer.android.com/sdk/installing.html
+
+4) Impostare l'ambiente Android per Eclipse
+seguire i passi della guida a questo indirizzo:
+http://developer.android.com/sdk/eclipse-adt.html#installing
+
+5) Importare il progetto ildn-hub in Eclipse
 Se non si è ancora eseguita l'installazione del pligin GIT seguire il passo 2).
 
 File -> Import
-Selezionare 'Project from Git' quindi next
-Cliccare 'Add'
-Cliccare 'Browse...'
-Selezionare la cartella ~/ildn-hub
-Cliccare 'Ok'
-Cliccare 'Search'
-Appare ora la cartella ~/ildn-hub/.git
-Selezionare la cartella ~/ildn-hub/.git
+Selezionare Import Existing Projects into Workspace
 Cliccare 'Next'
-Selezionare 'fedorait' oppure 'ildn-hub' a seconda dei casi
-Premere 'Finish'
+In Select Root Directory specificare: ~/ildn-hub/ildn-hub
+Cliccare 'Finish'
 
 

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="net.ildn.fedorait"
+      android:versionCode="1"
+      android:versionName="1.0">
+    <uses-sdk android:minSdkVersion="7" />
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+
+    <application android:icon="@drawable/iconb" android:label="@string/app_name">
+       	
+       	<activity android:name=".fedorait" 
+       			  android:label="@string/fedoraactivity"
+          		  android:theme="@android:style/Theme.NoTitleBar">
+          <intent-filter>
+                <action android:name="net.ildn.fedorait.fedorait" />
+                <category android:name="android.intent.category.DEFAULT" />
+          </intent-filter>
+        </activity>
+        
+       	<activity android:name="net.ildn.debianitalia.DebianItalia" 
+       			  android:label="@string/debianactivity"
+          		  android:theme="@android:style/Theme.NoTitleBar">
+          <intent-filter>
+                <action android:name="net.ildn.debianitalia.DebianItalia" />
+                <category android:name="android.intent.category.DEFAULT" />
+          </intent-filter>
+        </activity>
+         
+       	<activity android:name="net.ildn.suseitalia.SuseItalia" 
+       			  android:label="@string/suseactivity"
+          		  android:theme="@android:style/Theme.NoTitleBar">
+          <intent-filter>
+                <action android:name="net.ildn.suseitalia.SuseItalia" />
+                <category android:name="android.intent.category.DEFAULT" />
+          </intent-filter>
+        </activity>       
+          
+       	<activity android:name="net.ildn.mandrivaitalia.MandrivaItalia" 
+       			  android:label="@string/mandrivaactivity"
+          		  android:theme="@android:style/Theme.NoTitleBar">
+          <intent-filter>
+                <action android:name="net.ildn.mandrivaitalia.MandrivaItalia" />
+                <category android:name="android.intent.category.DEFAULT" />
+          </intent-filter>
+        </activity>       
+          
+        <activity android:name=".NewsActivity"
+                  android:label="@string/newsactivity">
+        </activity>
+    
+        <activity android:name="net.ildn.debianitalia.DebianNewsActivity"
+                  android:label="@string/newsactivity">
+        </activity>
+        
+        <activity android:name="net.ildn.suseitalia.SuseNewsActivity"
+                  android:label="@string/newsactivity">
+        </activity>
+        
+        <activity android:name="net.ildn.mandrivaitalia.MandrivaNewsActivity"
+                  android:label="@string/newsactivity">
+        </activity>
+
+        <activity android:name=".ForumActivity"
+                  android:label="@string/forumactivity">
+        </activity>
+
+        <activity android:name="net.ildn.debianitalia.DebianForumActivity"
+                  android:label="@string/forumactivity">
+        </activity>
+ 
+        <activity android:name="net.ildn.suseitalia.SuseForumActivity"
+                  android:label="@string/forumactivity">
+        </activity>
+                       
+        <activity android:name="net.ildn.mandrivaitalia.MandrivaForumActivity"
+                  android:label="@string/forumactivity">
+        </activity>
+        
+        <activity android:name=".GuideActivity"
+                  android:label="@string/guideactivity">
+        </activity>
+
+        <activity android:name="net.ildn.debianitalia.DebianGuideActivity"
+                  android:label="@string/guideactivity">
+        </activity>
+        
+        <activity android:name="net.ildn.suseitalia.SuseGuideActivity"
+                  android:label="@string/guideactivity">
+        </activity>
+        
+        <activity android:name="net.ildn.mandrivaitalia.MandrivaGuideActivity"
+                  android:label="@string/guideactivity">
+        </activity>
+        
+        <activity android:name=".BlogActivity"
+                  android:label="@string/blogactivity">
+        </activity>
+   
+        <activity android:name="net.ildn.debianitalia.DebianBlogActivity"
+                  android:label="@string/blogactivity">
+        </activity>
+        
+		<activity android:name="net.ildn.suseitalia.SuseBlogActivity"
+                  android:label="@string/blogactivity">
+        </activity>
+        
+        <activity android:name="net.ildn.mandrivaitalia.MandrivaBlogActivity"
+                  android:label="@string/blogactivity">
+        </activity>
+        
+        <activity android:name="net.ildn.OtherActivity"
+                  android:label="@string/otheractivity">
+        </activity>
+        
+        <activity android:name="net.ildn.SexySplash"
+        		  android:label="@string/app_name"
+        		  android:theme="@android:style/Theme.NoTitleBar">
+        	<intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+       	<activity android:name=".WebContent" 
+       			  android:label="@string/webcontentactivity"
+          		  android:theme="@android:style/Theme">
+          <intent-filter>
+                <action android:name="net.ildn.fedorait.WebContent" />
+                <category android:name="android.intent.category.DEFAULT" />
+          </intent-filter>
+        </activity>
+        
+        <activity android:name="net.ildn.GlobalMenu"
+        		  android:label="@string/app_name"
+        		  android:theme="@android:style/Theme.NoTitleBar">
+        	<intent-filter>
+                <action android:name="net.ildn.GlobalMenu" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+    </application>
+</manifest>

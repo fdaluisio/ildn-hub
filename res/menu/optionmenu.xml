@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/menuinfo"
+          android:icon="@drawable/ic_tab_artists_grey"
+          android:title="@string/menuinfo" />
+          
+    <item android:id="@+id/pluginswitch"
+    	  android:icon="@drawable/ic_tab_artists_grey"
+          android:title="@string/pluginswitch" />
+          
+    <item android:id="@+id/portaleswitch"
+    	  android:icon="@drawable/ic_tab_artists_grey"
+          android:title="@string/portaleswitch" />
+
+</menu>

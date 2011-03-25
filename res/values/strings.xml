@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<!-- Risorse comuni -->
+    <string name="splashtextildn">ILDN</string>
+    <string name="splashtext">Italian Linux Distro Network</string>
+    <string name="app_name">ILDN HUB</string>
+    <string name="fedoraactivity">Attività Fedora-it</string>
+    <string name="newsactivity">Attività News</string>
+    <string name="forumactivity">Attività Forum</string>
+    <string name="blogactivity">Attività Blog</string>
+    <string name="guideactivity">Attività Guide</string>
+    <string name="otheractivity">Attività Altro</string>
+    <string name="webcontentactivity">Attività WebContent</string>
+    <string name="splashactivity">Attività Splashscreen</string>
+    
+    <!-- Etichette di cosmesi varie -->
+    <string name="loading">Caricamento...</string>
+    <string name="pluginswitch">Opzioni</string>
+    <string name="sceglicosaabilitare">Scegli cosa abilitare</string>
+    <string name="portaledipartenza">Scegli Portale di partenza</string>
+    <string name="portaleswitch">Portali ILDN</string>
+    <string name="menuinfo">Credits</string>
+    <string name="creditsildn">ILDN: Italian Linux Distro Network, è il primo network italiano ed europeo dedicato alle maggiori distribuzioni GNU/Linux.\n\nPer maggiori informazioni: www.ildn.net</string>
+    <string name="ildnPreference">ildnPreference</string>
+    <string name="flash">Adobe Flash</string>
+    <string name="js">Javascript</string>
+    
+    <!-- Risorse per Fedora-it.org -->
+    <string name="intestazionefedora">Fedora-it.org</string>
+    <string name="portalefedora">net.ildn.fedorait.fedorait</string>
+    <color name="fedora">#1458ab</color>
+    <string name="fedoracolor">#1458ab</string>    
+    <string name="fedorafeednews">http://www.fedora-it.org/news/feed/</string>
+    <!-- string name="fedorafeedforum">http://www.fedora-it.org/forum/sezione/debian/programmi/feed</string-->
+    <string name="fedorafeedguide">http://www.fedora-it.org/guide/feed/</string>
+    <string name="fedorafeedblog">http://www.fedora-it.org/blog/feed/</string>
+    
+    <!-- Risorse per debianitalia.org -->
+    <string name="intestazionedebian">debianitalia.org</string>
+    <string name="portaledebian">net.ildn.debianitalia.DebianItalia</string>
+    <color name="debian">#b93541</color>
+    <string name="debiancolor">#b93541</string>
+    <string name="debianactivity">Attività DebianItalia</string>    
+    <string name="debianfeednews">http://www.debianitalia.org/news/feed/</string>
+    <string name="debianfeedguide">http://www.debianitalia.org/guide/feed/</string>
+    <string name="debianfeedblog">http://www.debianitalia.org/blog/feed/</string>
+    
+    <!-- Risorse per suseitalia.org -->
+    <string name="intestazionesuse">suseitalia.org</string>
+    <string name="portalesuse">net.ildn.suseitalia.SuseItalia</string>
+    <color name="suse">#6ca430</color>
+    <string name="susecolor">#6ca430</string>
+    <string name="suseactivity">Attività SuseItalia</string>    
+    <string name="susefeednews">http://www.suseitalia.org/news/feed/</string>
+    <string name="susefeedguide">http://www.suseitalia.org/guide/feed/</string>
+    <string name="susefeedblog">http://www.suseitalia.org/blog/feed/</string>
+ 
+     <!-- Risorse per mandrakeitalia.org -->
+    <string name="intestazionemandriva">mandrivaitalia.org</string>
+    <string name="portalemandriva">net.ildn.mandrivaitalia.MandrivaItalia</string>
+    <color name="mandriva">#5979bf</color>
+    <string name="mandrivacolor">#5979bf</string>
+    <string name="mandrivaactivity">Attività MandrivaItalia</string>    
+    <string name="mandrivafeednews">http://www.mandrakeitalia.org/news/feed/</string>
+    <string name="mandrivafeedguide">http://www.mandrakeitalia.org/guide/feed/</string>
+    <string name="mandrivafeedblog">http://www.mandrakeitalia.org/blog/feed/</string>
+    
+    <!-- Risorse per altri -->
+</resources>

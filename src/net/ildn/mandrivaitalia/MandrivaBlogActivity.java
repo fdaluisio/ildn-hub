@@ -28,7 +28,7 @@ public class MandrivaBlogActivity extends GlobalMenu {
 		showme.setData(Uri.parse(messages.get(position).getLink()
 				.toExternalForm()));
 		showme.putExtra("description", messages.get(position).getDescription());
-		showme.putExtra("fonte", this.getString(R.color.mandriva));
+		showme.putExtra("fonte", this.getString(R.string.intestazionemandriva));
 		startActivity(showme);
 	}
 

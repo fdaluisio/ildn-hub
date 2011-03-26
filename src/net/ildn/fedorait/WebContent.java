@@ -57,7 +57,7 @@ public class WebContent extends Activity {
 		viewer.getSettings().setSupportZoom(true);
 		viewer.getSettings().setBuiltInZoomControls(true);
 		viewer.getSettings().setAllowFileAccess(true);
-		
+		viewer.getSettings().setUseWideViewPort(true);
 		
 		// Load Description
 		viewer.loadDataWithBaseURL(baseurl.toString(),

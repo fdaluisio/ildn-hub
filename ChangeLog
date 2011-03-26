@@ -1,0 +1,86 @@
+2011-03-26  fdaluisio <fdaluisio@fedoraproject.org>
+
+  * src/net/ildn/debianitalia/DebianBlogActivity.java,
+  src/net/ildn/debianitalia/DebianGuideActivity.java,
+  src/net/ildn/debianitalia/DebianNewsActivity.java,
+  src/net/ildn/fedorait/BlogActivity.java,
+  src/net/ildn/fedorait/GuideActivity.java,
+  src/net/ildn/fedorait/NewsActivity.java,
+  src/net/ildn/fedorait/WebContent.java,
+  .../ildn/mandrivaitalia/MandrivaBlogActivity.java,
+  .../ildn/mandrivaitalia/MandrivaGuideActivity.java,
+  .../ildn/mandrivaitalia/MandrivaNewsActivity.java,
+  src/net/ildn/suseitalia/SuseBlogActivity.java,
+  src/net/ildn/suseitalia/SuseGuideActivity.java,
+  src/net/ildn/suseitalia/SuseNewsActivity.java: Bugfix. Non si vedono tutte le
+  immagini. Fornendo il baseUrl al loaddata della webview ora si riescono ad
+  visualizzare tutte le immagini del tag description anche quelle che hanno un
+  href relativo.  Enhancement Cambiata la barra di navigazione nella webview.
+  ora mostra il sito su cui navigo. Permette all'utente di capire se è ancora
+  su un portale ildn oppure è finito su un sito esterno al network.
+
+  * src/net/ildn/fedorait/BlogActivity.java,
+  .../ildn/mandrivaitalia/MandrivaBlogActivity.java: fix fonte nella webview
+  per blog fedora e mandriva
+
+2011-03-25  fdaluisio <fdaluisio@fedoraproject.org>
+
+  * .gitignore: exclude bin/
+
+  * README: improved some useful Eclipse information
+
+  * .classpath: first project import
+
+  * .project: change eclipse project to ildn-hub
+
+  * .project: first import
+
+  * AndroidManifest.xml, build.xml, default.properties,
+  gen/net/ildn/fedorait/R.java, proguard.cfg, res/drawable-hdpi/icon.png,
+  res/drawable-ldpi/icon.png, res/drawable-mdpi/icon.png,
+  res/drawable/ic_tab_artists_grey.png, res/drawable/ic_tab_artists_white.png,
+  res/drawable/ic_tab_blog.xml, res/drawable/ic_tab_forum.xml,
+  res/drawable/ic_tab_guide.xml, res/drawable/ic_tab_news.xml,
+  res/drawable/ic_tab_other.xml, res/drawable/iconb.png,
+  res/drawable/ildn_logob.png, res/drawable/splash_image.png,
+  res/layout/feedblogrow.xml, res/layout/feedguiderow.xml,
+  res/layout/feednewsrow.xml, res/layout/layoutguide.xml,
+  res/layout/layoutnews.xml, res/layout/list_item.xml, res/layout/main.xml,
+  res/layout/other.xml, res/layout/sexysplash.xml, res/layout/webview.xml,
+  res/menu/optionmenu.xml, res/values/strings.xml,
+  src/net/ildn/DataRetriever.java, src/net/ildn/GlobalMenu.java,
+  src/net/ildn/NewsAdapter.java, src/net/ildn/NewsItemRow.java,
+  src/net/ildn/OtherActivity.java, src/net/ildn/SexySplash.java,
+  src/net/ildn/debianitalia/DebianBlogActivity.java,
+  src/net/ildn/debianitalia/DebianForumActivity.java,
+  src/net/ildn/debianitalia/DebianGuideActivity.java,
+  src/net/ildn/debianitalia/DebianItalia.java,
+  src/net/ildn/debianitalia/DebianNewsActivity.java,
+  src/net/ildn/fedorait/BlogActivity.java,
+  src/net/ildn/fedorait/ForumActivity.java,
+  src/net/ildn/fedorait/GuideActivity.java,
+  src/net/ildn/fedorait/NewsActivity.java,
+  src/net/ildn/fedorait/WebContent.java, src/net/ildn/fedorait/fedorait.java,
+  src/net/ildn/feed/AndroidSaxFeedParser.java,
+  src/net/ildn/feed/BaseFeedParser.java, src/net/ildn/feed/FeedParser.java,
+  src/net/ildn/feed/Message.java,
+  .../ildn/mandrivaitalia/MandrivaBlogActivity.java,
+  .../ildn/mandrivaitalia/MandrivaForumActivity.java,
+  .../ildn/mandrivaitalia/MandrivaGuideActivity.java,
+  src/net/ildn/mandrivaitalia/MandrivaItalia.java,
+  .../ildn/mandrivaitalia/MandrivaNewsActivity.java,
+  src/net/ildn/suseitalia/SuseBlogActivity.java,
+  src/net/ildn/suseitalia/SuseForumActivity.java,
+  src/net/ildn/suseitalia/SuseGuideActivity.java,
+  src/net/ildn/suseitalia/SuseItalia.java,
+  src/net/ildn/suseitalia/SuseNewsActivity.java: first project import
+
+2011-03-24  fdaluisio <fdaluisio@fedoraproject.org>
+
+  * README: first import
+
+  * LICENSE: first import
+
+2011-03-24  Francesco D'Aluisio <fdaluisio@psych.(none)>
+
+  * : test import

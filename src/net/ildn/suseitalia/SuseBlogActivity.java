@@ -29,6 +29,7 @@ public class SuseBlogActivity extends GlobalMenu {
 				.toExternalForm()));
 		showme.putExtra("description", messages.get(position).getDescription());
 		showme.putExtra("fonte", this.getString(R.string.intestazionesuse));
+		showme.putExtra("baseurl", messages.get(position).getLink().toString());
 		startActivity(showme);
 	}
 

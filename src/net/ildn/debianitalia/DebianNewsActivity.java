@@ -29,6 +29,7 @@ public class DebianNewsActivity extends GlobalMenu {
 				.toExternalForm()));
 		showme.putExtra("description", messages.get(position).getDescription());
 		showme.putExtra("fonte", this.getString(R.string.intestazionedebian));
+		showme.putExtra("baseurl", messages.get(position).getLink().toString());
 		startActivity(showme);
 	}
 

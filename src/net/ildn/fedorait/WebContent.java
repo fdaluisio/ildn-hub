@@ -5,6 +5,7 @@ import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -34,9 +35,14 @@ public class WebContent extends Activity {
 		Intent launchingIntent = getIntent();
 		String content = launchingIntent.getData().toString();
 		// Imposto sorgente del contenuto web
-		fonte = launchingIntent.getExtras().getString("fonte");
+		fonte = launchingIntent.getExtras().getString("fonte");		
 		Log.i(fonte + " - WebContent", "uri activity: " + content);
+		Uri baseurl = Uri.parse(launchingIntent.getExtras().getString("baseurl"));
+		Log.i(fonte + " - WebContent","Host: " + baseurl.getHost());
+		//Log.i(fonte + " - WebContent", "tag description: " + launchingIntent.getExtras().getString("description"));
+		
 
+		
 		/*
 		 * Carico impostazioni personalizzate per i plugin flash e js
 		 */
@@ -50,15 +56,20 @@ public class WebContent extends Activity {
 		// Enable multi-touch if ROM supports
 		viewer.getSettings().setSupportZoom(true);
 		viewer.getSettings().setBuiltInZoomControls(true);
-
+		viewer.getSettings().setAllowFileAccess(true);
+		
+		
 		// Load Description
-		viewer.loadDataWithBaseURL(null,
+		viewer.loadDataWithBaseURL(baseurl.toString(),
 				launchingIntent.getExtras().getString("description"),
 				"text/html", "UTF-8", null);
 
 		viewer.setWebChromeClient(new WebChromeClient() {
 			public void onProgressChanged(WebView view, int progress) {
-				activity.setTitle(fonte);
+				if (view.getUrl()!= null)
+					activity.setTitle(Uri.parse(view.getUrl()).getHost().toString());
+				else 
+					activity.setTitle(fonte);
 				activity.setProgress(progress * 100);
 				if (progress == 100)
 					setProgressBarIndeterminateVisibility(false); // Hide
@@ -66,17 +77,18 @@ public class WebContent extends Activity {
 																	// circle
 																	// when page
 																	// loaded
-				activity.setTitle(fonte);
+				
 			}
 		});
 
 	}
 
 	private class HelloWebViewClient extends WebViewClient {
+
 		@Override
 		public boolean shouldOverrideUrlLoading(WebView view, String url) {
 			view.loadUrl(url);
-			return true;
+			return false;
 		}
 
 		public void onReceivedError(WebView view, int errorCode,

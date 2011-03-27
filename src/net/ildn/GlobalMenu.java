@@ -12,14 +12,19 @@ import android.content.DialogInterface.OnClickListener;
 import android.content.SharedPreferences;
 import android.os.Handler;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
 
 public class GlobalMenu extends ListActivity {
 
 	private boolean flash;
 	private boolean js;
+	private String ildnuser;
+	private String ildnpasswd;
 	private String portaledefault;
 	private String scelta;
 	private String sharedresource;
@@ -89,7 +94,7 @@ public class GlobalMenu extends ListActivity {
 		case R.id.portaleswitch:
 			AlertDialog.Builder builder3 = new AlertDialog.Builder(this);
 			builder3.setTitle(getString(R.string.portaledipartenza));
-			builder3.setCancelable(false);
+			builder3.setCancelable(true);
 			setSharedresource(this.getString(R.string.ildnPreference));
 			SharedPreferences settings3 = getSharedPreferences(sharedresource,
 					0);
@@ -106,7 +111,6 @@ public class GlobalMenu extends ListActivity {
 
 						@Override
 						public void onClick(DialogInterface dialog, int which) {
-							// TODO Auto-generated method stub
 							Log.i(LOG_ID, "onClickListener onClick "
 									+ portalidisponibili[which]
 									+ " as been selected");
@@ -149,7 +153,7 @@ public class GlobalMenu extends ListActivity {
 		case R.id.pluginswitch:
 			AlertDialog.Builder builder2 = new AlertDialog.Builder(this);
 			builder2.setTitle(getString(R.string.sceglicosaabilitare));
-			builder2.setCancelable(false);
+			builder2.setCancelable(true);
 
 			/*
 			 * Loading SharedPreferences per i plugin
@@ -223,7 +227,63 @@ public class GlobalMenu extends ListActivity {
 			alert2.show();
 
 			return true;
+			
+		case R.id.credentialswitch:
+			AlertDialog.Builder builder4 = new AlertDialog.Builder(this);
+			builder4.setTitle(getString(R.string.credentialswitch));
+			builder4.setCancelable(true);
 
+			LayoutInflater factory = LayoutInflater.from(this);
+            final View textEntryView = factory.inflate(R.layout.alert_dialog_user_pass, null);
+            builder4.setView(textEntryView);            
+            final EditText tvname = (EditText)textEntryView.findViewById(R.id.username_edit);
+            final EditText tvpass = (EditText)textEntryView.findViewById(R.id.password_edit);
+
+			/*
+			 * Loading SharedPreferences for ILDN username/password
+			 */            
+            
+            final UserCredential uc = new UserCredential(this);
+            ildnuser=uc.getPrefs("ildnuser");
+            ildnpasswd=uc.getPrefs("ildnpasswd");
+            tvname.setText(ildnuser);
+            tvpass.setText(ildnpasswd);
+            //Log.i(LOG_ID, "utente: "+ildnuser+" passwd: "+ildnpasswd);
+			
+            /*
+             * Setting Ok - Annulla botton
+             */
+			builder4.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+				
+					@Override
+                    public void onClick(DialogInterface dialog, int whichButton) {
+						Log.i(LOG_ID,
+						"PositiveButton OnClickListener button pressed");
+                    	
+                    	/*
+                    	 * Save username/password in sharedPreference
+                    	 */
+                        uc.setPrefs("ildnuser", tvname.getText().toString());
+                        uc.setPrefs("ildnpasswd", tvpass.getText().toString());
+                    }
+			});
+			
+            builder4.setNegativeButton("Annulla", new DialogInterface.OnClickListener() {
+            	
+            		@Override
+                    public void onClick(DialogInterface dialog, int whichButton) {
+
+                        /* User clicked cancel so do some stuff */
+    					Log.i(LOG_ID,
+						"NegativeButton OnClickListener button pressed");
+                    }
+            });
+			
+            // Show alert			
+			AlertDialog alert4 = builder4.create();
+			alert4.show();
+			
+			return true;
 		default:
 			return super.onOptionsItemSelected(item);
 		}

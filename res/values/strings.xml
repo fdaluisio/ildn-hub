@@ -20,11 +20,15 @@
     <string name="sceglicosaabilitare">Scegli cosa abilitare</string>
     <string name="portaledipartenza">Scegli Portale di partenza</string>
     <string name="portaleswitch">Portali ILDN</string>
+    <string name="credentialswitch">Accesso ILDN</string>
     <string name="menuinfo">Credits</string>
     <string name="creditsildn">ILDN: Italian Linux Distro Network, è il primo network italiano ed europeo dedicato alle maggiori distribuzioni GNU/Linux.\n\nPer maggiori informazioni: www.ildn.net</string>
     <string name="ildnPreference">ildnPreference</string>
     <string name="flash">Adobe Flash</string>
     <string name="js">Javascript</string>
+    <string name="login">Login</string>
+    <string name="alert_dialog_username">Nome utente:</string>
+    <string name="alert_dialog_password">Password:</string>
     
     <!-- Risorse per Fedora-it.org -->
     <string name="intestazionefedora">Fedora-it.org</string>

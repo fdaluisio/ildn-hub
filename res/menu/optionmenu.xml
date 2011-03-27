@@ -14,4 +14,8 @@
     	  android:icon="@drawable/ic_tab_artists_grey"
           android:title="@string/portaleswitch" />
 
+    <item android:id="@+id/credentialswitch"
+    	  android:icon="@drawable/ic_tab_artists_grey"
+          android:title="@string/login" />
+
 </menu>

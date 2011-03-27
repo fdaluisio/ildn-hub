@@ -41,8 +41,6 @@ public class WebContent extends Activity {
 		Log.i(fonte + " - WebContent","Host: " + baseurl.getHost());
 		//Log.i(fonte + " - WebContent", "tag description: " + launchingIntent.getExtras().getString("description"));
 		
-
-		
 		/*
 		 * Carico impostazioni personalizzate per i plugin flash e js
 		 */
@@ -59,6 +57,9 @@ public class WebContent extends Activity {
 		viewer.getSettings().setAllowFileAccess(true);
 		viewer.getSettings().setUseWideViewPort(true);
 		
+		activity.setTitle(fonte);
+
+		
 		// Load Description
 		viewer.loadDataWithBaseURL(baseurl.toString(),
 				launchingIntent.getExtras().getString("description"),
@@ -66,8 +67,11 @@ public class WebContent extends Activity {
 
 		viewer.setWebChromeClient(new WebChromeClient() {
 			public void onProgressChanged(WebView view, int progress) {
-				if (view.getUrl()!= null)
+				if (view.getUrl()!= null && !view.getUrl().toString().equalsIgnoreCase("about:blank")) {
+					Log.i(fonte + " - WebContent","onProgressChanged: " + view.getUrl().toString());
 					activity.setTitle(Uri.parse(view.getUrl()).getHost().toString());
+				}
+					
 				else 
 					activity.setTitle(fonte);
 				activity.setProgress(progress * 100);
@@ -88,7 +92,7 @@ public class WebContent extends Activity {
 		@Override
 		public boolean shouldOverrideUrlLoading(WebView view, String url) {
 			view.loadUrl(url);
-			return false;
+			return true;
 		}
 
 		public void onReceivedError(WebView view, int errorCode,
@@ -104,13 +108,22 @@ public class WebContent extends Activity {
 
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		//Log.i(fonte + " - WebContent", "onKeyDown "+ event.getKeyCode());
+		
+		if ((keyCode == KeyEvent.KEYCODE_BACK)) {
+			//Log.i(fonte + " - WebContent", "onKeyDown "+ event.getKeyCode() + " now call onBackPassed");
+			onBackPressed();
+			return true;
+		}
+/*		
 		if ((keyCode == KeyEvent.KEYCODE_BACK) && viewer.canGoBack()) {
 			viewer.goBack();
 			return true;
-		}
+		}	
+*/
 		return super.onKeyDown(keyCode, event);
 	}
-
+	
 	/**
 	 * Before the dialog is created
 	 * 
@@ -144,4 +157,15 @@ public class WebContent extends Activity {
 		this.fonte = fonte;
 	}
 
+	/* (non-Javadoc)
+	 * @see android.app.Activity#onStop()
+	 */
+	@Override
+	protected void onStop() {
+		Log.i(fonte + " - WebContent", "onStop ");
+		// TODO Auto-generated method stub
+		super.onStop();
+	}
+
+	
 }

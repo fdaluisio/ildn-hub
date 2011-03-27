@@ -1,5 +1,8 @@
 2011-03-26  fdaluisio <fdaluisio@fedoraproject.org>
 
+  * ChangeLog, src/net/ildn/fedorait/WebContent.java: Aggiunto il doppio tap
+  nella webview
+
   * src/net/ildn/debianitalia/DebianBlogActivity.java,
   src/net/ildn/debianitalia/DebianGuideActivity.java,
   src/net/ildn/debianitalia/DebianNewsActivity.java,

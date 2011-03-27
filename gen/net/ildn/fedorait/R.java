@@ -51,15 +51,16 @@ public final class R {
     }
     public static final class layout {
         public static final int feedblogrow=0x7f030000;
-        public static final int feedguiderow=0x7f030001;
-        public static final int feednewsrow=0x7f030002;
-        public static final int layoutguide=0x7f030003;
-        public static final int layoutnews=0x7f030004;
-        public static final int list_item=0x7f030005;
-        public static final int main=0x7f030006;
-        public static final int other=0x7f030007;
-        public static final int sexysplash=0x7f030008;
-        public static final int webview=0x7f030009;
+        public static final int feedforumrow=0x7f030001;
+        public static final int feedguiderow=0x7f030002;
+        public static final int feednewsrow=0x7f030003;
+        public static final int layoutguide=0x7f030004;
+        public static final int layoutnews=0x7f030005;
+        public static final int list_item=0x7f030006;
+        public static final int main=0x7f030007;
+        public static final int other=0x7f030008;
+        public static final int sexysplash=0x7f030009;
+        public static final int webview=0x7f03000a;
     }
     public static final class menu {
         public static final int optionmenu=0x7f060000;
@@ -68,17 +69,16 @@ public final class R {
         public static final int app_name=0x7f040002;
         public static final int blogactivity=0x7f040006;
         public static final int creditsildn=0x7f040011;
-        public static final int debianactivity=0x7f04001e;
-        public static final int debiancolor=0x7f04001d;
-        public static final int debianfeedblog=0x7f040021;
-        public static final int debianfeedguide=0x7f040020;
-        public static final int debianfeednews=0x7f04001f;
+        public static final int debianactivity=0x7f04001f;
+        public static final int debiancolor=0x7f04001e;
+        public static final int debianfeedblog=0x7f040022;
+        public static final int debianfeedguide=0x7f040021;
+        public static final int debianfeednews=0x7f040020;
         public static final int fedoraactivity=0x7f040003;
         public static final int fedoracolor=0x7f040017;
-        public static final int fedorafeedblog=0x7f04001a;
-        /**  string name="fedorafeedforum">http://www.fedora-it.org/forum/sezione/debian/programmi/feed</string
-         */
-        public static final int fedorafeedguide=0x7f040019;
+        public static final int fedorafeedblog=0x7f04001b;
+        public static final int fedorafeedforum=0x7f040019;
+        public static final int fedorafeedguide=0x7f04001a;
         public static final int fedorafeednews=0x7f040018;
         public static final int flash=0x7f040013;
         public static final int forumactivity=0x7f040005;
@@ -86,34 +86,34 @@ public final class R {
         public static final int ildnPreference=0x7f040012;
         /**  Risorse per debianitalia.org 
          */
-        public static final int intestazionedebian=0x7f04001b;
+        public static final int intestazionedebian=0x7f04001c;
         /**  Risorse per Fedora-it.org 
          */
         public static final int intestazionefedora=0x7f040015;
         /**  Risorse per mandrakeitalia.org 
          */
-        public static final int intestazionemandriva=0x7f040029;
+        public static final int intestazionemandriva=0x7f04002a;
         /**  Risorse per suseitalia.org 
          */
-        public static final int intestazionesuse=0x7f040022;
+        public static final int intestazionesuse=0x7f040023;
         public static final int js=0x7f040014;
         /**  Etichette di cosmesi varie 
          */
         public static final int loading=0x7f04000b;
-        public static final int mandrivaactivity=0x7f04002c;
-        public static final int mandrivacolor=0x7f04002b;
-        public static final int mandrivafeedblog=0x7f04002f;
-        public static final int mandrivafeedguide=0x7f04002e;
-        public static final int mandrivafeednews=0x7f04002d;
+        public static final int mandrivaactivity=0x7f04002d;
+        public static final int mandrivacolor=0x7f04002c;
+        public static final int mandrivafeedblog=0x7f040030;
+        public static final int mandrivafeedguide=0x7f04002f;
+        public static final int mandrivafeednews=0x7f04002e;
         public static final int menuinfo=0x7f040010;
         public static final int newsactivity=0x7f040004;
         public static final int otheractivity=0x7f040008;
         public static final int pluginswitch=0x7f04000c;
-        public static final int portaledebian=0x7f04001c;
+        public static final int portaledebian=0x7f04001d;
         public static final int portaledipartenza=0x7f04000e;
         public static final int portalefedora=0x7f040016;
-        public static final int portalemandriva=0x7f04002a;
-        public static final int portalesuse=0x7f040023;
+        public static final int portalemandriva=0x7f04002b;
+        public static final int portalesuse=0x7f040024;
         public static final int portaleswitch=0x7f04000f;
         public static final int sceglicosaabilitare=0x7f04000d;
         public static final int splashactivity=0x7f04000a;
@@ -121,11 +121,11 @@ public final class R {
         /**  Risorse comuni 
          */
         public static final int splashtextildn=0x7f040000;
-        public static final int suseactivity=0x7f040025;
-        public static final int susecolor=0x7f040024;
-        public static final int susefeedblog=0x7f040028;
-        public static final int susefeedguide=0x7f040027;
-        public static final int susefeednews=0x7f040026;
+        public static final int suseactivity=0x7f040026;
+        public static final int susecolor=0x7f040025;
+        public static final int susefeedblog=0x7f040029;
+        public static final int susefeedguide=0x7f040028;
+        public static final int susefeednews=0x7f040027;
         public static final int webcontentactivity=0x7f040009;
     }
 }

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout
+android:id="@+id/newstablerow"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent"
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:orientation="vertical"
+android:background="#FFFFFF"
+>
+
+<TextView
+android:id="@+id/newstitolo"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent"
+android:text="Titolo news"
+android:padding="3px"
+android:textSize="16sp"
+
+/>
+
+<TextView
+android:id="@+id/newscontenuto"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Contenuto news"
+android:padding="1px"
+android:textSize="14sp"
+
+/>
+
+<TextView
+android:id="@+id/newscreatore"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Creatore news"
+android:paddingRight="10px"
+android:textSize="12sp"
+android:gravity="right"
+android:typeface="sans"
+android:textStyle="italic"
+
+/>
+
+<TextView
+android:id="@+id/newsdatapublicazione"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Data news"
+android:paddingRight="10px"
+android:textSize="10sp"
+android:gravity="right"
+android:typeface="sans"
+android:textStyle="italic"
+/>
+
+</TableLayout>

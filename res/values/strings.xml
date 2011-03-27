@@ -32,7 +32,7 @@
     <color name="fedora">#1458ab</color>
     <string name="fedoracolor">#1458ab</string>    
     <string name="fedorafeednews">http://www.fedora-it.org/news/feed/</string>
-    <!-- string name="fedorafeedforum">http://www.fedora-it.org/forum/sezione/debian/programmi/feed</string-->
+    <string name="fedorafeedforum">http://www.fedora-it.org/forum/sezione/debian/programmi/feed</string>
     <string name="fedorafeedguide">http://www.fedora-it.org/guide/feed/</string>
     <string name="fedorafeedblog">http://www.fedora-it.org/blog/feed/</string>
     

@@ -1,8 +1,10 @@
 package net.ildn.fedorait;
 
+import net.ildn.Authentication;
 import net.ildn.OtherActivity;
 import android.app.TabActivity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,17 +13,36 @@ import android.widget.TabHost;
 import android.widget.TextView;
 
 public class fedorait extends TabActivity {
+	
+	private static final String LOG_ID = "Fedora-it.org - fedoraitActivity";
+	private int statusAuth = Authentication.NOT_ACCESS;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		Log.i("Fedora-it.org - fedoraitActivity", "Richiamato onCreate()");
+		Log.i(LOG_ID, "Richiamato onCreate()");
 		setContentView(R.layout.main);
 		Resources res = getResources(); // Resource object to get Drawables
 		
 		TextView tv = new TextView(this);
+		
+		/*
+		 * Login code
+		 */
+		SharedPreferences settings = getSharedPreferences(getString(R.string.ildnPreference), MODE_PRIVATE);
+		String portaledefault = settings.getString("portaledefault", "");
+		Authentication auth = new Authentication(this);		
+		if (portaledefault.equalsIgnoreCase(getString(R.string.intestazionefedora))) {
+			statusAuth = auth.login();
+			Log.i(LOG_ID,"return auth status: "+ statusAuth);			
+		}
+		
 		tv = (TextView)findViewById(R.id.testatina);
-		tv.setText(getResources().getString(R.string.intestazionefedora));
+		if (statusAuth == Authentication.ACCESS) {
+			tv.setText(auth.getUsername()+ "@" + getResources().getString(R.string.intestazionefedora));
+		}
+		else 
+			tv.setText(getResources().getString(R.string.intestazionefedora));
 		tv.setBackgroundResource(R.color.fedora);
 		
 		LinearLayout l = new LinearLayout(this);
@@ -70,6 +91,15 @@ public class fedorait extends TabActivity {
 		tabHost.addTab(spec);
 
 		tabHost.setCurrentTab(0);
+	}
+
+	/* (non-Javadoc)
+	 * @see android.app.ActivityGroup#onStop()
+	 */
+	@Override
+	protected void onStop() {
+		Log.i(LOG_ID, "Richiamato onStop()");
+		super.onStop();
 	}
 
 }

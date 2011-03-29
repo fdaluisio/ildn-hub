@@ -1,3 +1,18 @@
+2011-03-27  fdaluisio <fdaluisio@fedoraproject.org>
+
+  * gen/net/ildn/fedorait/R.java, res/layout/alert_dialog_user_pass.xml,
+  res/menu/optionmenu.xml, res/values/strings.xml,
+  src/net/ildn/GlobalMenu.java, src/net/ildn/SimpleCrypto.java,
+  src/net/ildn/UserCredential.java: add sample account manager for user
+  credential. Username/Password are stored in ecryption form
+
+  * gen/net/ildn/fedorait/R.java, res/layout/feedforumrow.xml,
+  res/values/strings.xml, src/net/ildn/fedorait/ForumActivity.java:
+  Enhancement: insert code for Forum Tab
+
+  * ChangeLog, src/net/ildn/fedorait/WebContent.java: Fix crash webview in
+  Froyo 2.2
+
 2011-03-26  fdaluisio <fdaluisio@fedoraproject.org>
 
   * ChangeLog, src/net/ildn/fedorait/WebContent.java: Aggiunto il doppio tap

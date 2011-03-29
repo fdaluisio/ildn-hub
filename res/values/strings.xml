@@ -31,7 +31,7 @@
     <string name="alert_dialog_password">Password:</string>
     
     <!-- Risorse per Fedora-it.org -->
-    <string name="intestazionefedora">Fedora-it.org</string>
+    <string name="intestazionefedora">fedora-it.org</string>
     <string name="portalefedora">net.ildn.fedorait.fedorait</string>
     <color name="fedora">#1458ab</color>
     <string name="fedoracolor">#1458ab</string>    
@@ -61,7 +61,7 @@
     <string name="susefeedblog">http://www.suseitalia.org/blog/feed/</string>
  
      <!-- Risorse per mandrakeitalia.org -->
-    <string name="intestazionemandriva">mandrivaitalia.org</string>
+    <string name="intestazionemandriva">mandrakeitalia.org</string>
     <string name="portalemandriva">net.ildn.mandrivaitalia.MandrivaItalia</string>
     <color name="mandriva">#5979bf</color>
     <string name="mandrivacolor">#5979bf</string>

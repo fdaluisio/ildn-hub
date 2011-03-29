@@ -9,6 +9,7 @@ import android.app.ListActivity;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Handler;
 import android.util.Log;
@@ -17,7 +18,9 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.Spinner;
 
 public class GlobalMenu extends ListActivity {
 
@@ -90,7 +93,7 @@ public class GlobalMenu extends ListActivity {
 			AlertDialog alert = builder.create();
 			alert.show();
 			return true;
-
+/*
 		case R.id.portaleswitch:
 			AlertDialog.Builder builder3 = new AlertDialog.Builder(this);
 			builder3.setTitle(getString(R.string.portaledipartenza));
@@ -130,9 +133,11 @@ public class GlobalMenu extends ListActivity {
 
 					/*
 					 * Salvo le preferenze
-					 */
+					 
+			
 					editor.putString("portaledefault", scelta);
 					editor.commit();
+					
 				}
 			});
 
@@ -149,7 +154,7 @@ public class GlobalMenu extends ListActivity {
 			AlertDialog alert3 = builder3.create();
 			alert3.show();
 			return true;
-
+*/
 		case R.id.pluginswitch:
 			AlertDialog.Builder builder2 = new AlertDialog.Builder(this);
 			builder2.setTitle(getString(R.string.sceglicosaabilitare));
@@ -238,7 +243,37 @@ public class GlobalMenu extends ListActivity {
             builder4.setView(textEntryView);            
             final EditText tvname = (EditText)textEntryView.findViewById(R.id.username_edit);
             final EditText tvpass = (EditText)textEntryView.findViewById(R.id.password_edit);
+            final Spinner  mSpinner = (Spinner)textEntryView.findViewById(R.id.spinnerportali);
+            
+			SharedPreferences settings4 = getSharedPreferences(getString(R.string.ildnPreference),MODE_PRIVATE);
+			portaledefault = settings4.getString("portaledefault","");
+            
+			final String portalidisponibili1[] = {
+					this.getString(R.string.intestazionedebian),
+					this.getString(R.string.intestazionefedora),
+					this.getString(R.string.intestazionesuse),
+					this.getString(R.string.intestazionemandriva),
+					"nessuno"};
+            
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                    android.R.layout.simple_spinner_item, portalidisponibili1); 
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            mSpinner.setPrompt(getString(R.string.portaledipartenza));
 
+            
+            // When programmatically creating views, make sure to set an ID
+            // so it will automatically save its instance state
+            mSpinner.setAdapter(adapter);
+            int k=4; //portaledefault=nessuno
+            for (int i=0; i<portalidisponibili1.length; i++) {
+            	Log.i(LOG_ID, "portale disponibile: " + portalidisponibili1[i]);
+            	if (portalidisponibili1[i].equalsIgnoreCase(portaledefault)) {
+            		k=i;
+            		Log.i(LOG_ID, "portale trovato: " + portalidisponibili1[i]+ " in posizione k: "+k);
+            		break;
+            	}
+            }
+            mSpinner.setSelection(k);            
 			/*
 			 * Loading SharedPreferences for ILDN username/password
 			 */            
@@ -257,14 +292,70 @@ public class GlobalMenu extends ListActivity {
 				
 					@Override
                     public void onClick(DialogInterface dialog, int whichButton) {
-						Log.i(LOG_ID,
-						"PositiveButton OnClickListener button pressed");
-                    	
+						
+						setSharedresource(getString(R.string.ildnPreference));
+						SharedPreferences settings = getSharedPreferences(sharedresource, 0);
+    					SharedPreferences.Editor editor = settings.edit();
+    					
+						Log.i(LOG_ID,"PositiveButton OnClickListener button pressed");
+						
+						final Spinner  mSpinner = (Spinner)textEntryView.findViewById(R.id.spinnerportali);
+						scelta = mSpinner.getSelectedItem().toString();
+						Log.i(LOG_ID,"Portale di default:"+scelta);
+
+    					/*
+    					 * Salvo la preferenze portaledefault
+    					 */
+    					editor.putString("portaledefault",  scelta);
+    					boolean val = editor.commit();
+    					Log.i(LOG_ID, "return commit: "+ val);
+
                     	/*
-                    	 * Save username/password in sharedPreference
+                    	 * Save username/password and portaledefault in sharedPreference
                     	 */
-                        uc.setPrefs("ildnuser", tvname.getText().toString());
-                        uc.setPrefs("ildnpasswd", tvpass.getText().toString());
+    					if (scelta.equalsIgnoreCase("nessuno")) {
+    						//Clean dell'Account Manager
+    						uc.setPrefs("ildnuser", "");
+    						uc.setPrefs("ildnpasswd", "");
+    						Log.i(LOG_ID, "clean dell'Account Manager ");
+    					}
+    					else {
+    						uc.setPrefs("ildnuser", tvname.getText().toString());
+    						uc.setPrefs("ildnpasswd", tvpass.getText().toString());
+    					}
+    					portaledefault=scelta;
+    					Log.i(LOG_ID,"Portale di default valore nello spinner:"+mSpinner.getSelectedItem().toString());
+
+
+    					
+    					/* 
+    					 * Start Activity for default portal
+    					 */
+    					
+    					
+    					Intent mainIntent = null;
+    					if (scelta
+    							.equalsIgnoreCase(getString(R.string.intestazionedebian))) {
+    						mainIntent = new Intent(getString(R.string.portaledebian));
+    					} else if (scelta
+    							.equalsIgnoreCase(getString(R.string.intestazionefedora))) {
+    						mainIntent = new Intent(getString(R.string.portalefedora));
+    					} else if (scelta
+    							.equalsIgnoreCase(getString(R.string.intestazionesuse))) {
+    						mainIntent = new Intent(getString(R.string.portalesuse));
+    					} else if (scelta
+    						.equalsIgnoreCase(getString(R.string.intestazionesuse))) {
+    						mainIntent = new Intent(getString(R.string.portalemandriva));
+						} else if (scelta
+							.equalsIgnoreCase("nessuno")) {
+							mainIntent = null;
+						}
+    					
+						if (mainIntent != null) { 
+							startActivity(mainIntent);
+							finish();
+						}
+                       
                     }
 			});
 			

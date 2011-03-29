@@ -30,29 +30,30 @@ public final class R {
         public static final int splash_image=0x7f02000a;
     }
     public static final class id {
-        public static final int LinearLayout01=0x7f07000c;
-        public static final int absoluteguide=0x7f070009;
-        public static final int absolutenews=0x7f07000b;
-        public static final int absoluteother=0x7f07000f;
-        public static final int credentialswitch=0x7f070016;
-        public static final int imageView2=0x7f070011;
-        public static final int listaguide=0x7f07000a;
-        public static final int menuinfo=0x7f070013;
-        public static final int newscontenuto=0x7f070006;
-        public static final int newscreatore=0x7f070007;
-        public static final int newsdatapublicazione=0x7f070008;
-        public static final int newstablerow=0x7f070004;
-        public static final int newstitolo=0x7f070005;
-        public static final int password_edit=0x7f070003;
-        public static final int password_view=0x7f070002;
-        public static final int pluginswitch=0x7f070014;
-        public static final int portaleswitch=0x7f070015;
-        public static final int sfondo=0x7f07000e;
-        public static final int splashimage=0x7f070010;
-        public static final int testatina=0x7f07000d;
-        public static final int username_edit=0x7f070001;
-        public static final int username_view=0x7f070000;
-        public static final int webview1=0x7f070012;
+        public static final int LinearLayout01=0x7f07000d;
+        public static final int absoluteguide=0x7f07000a;
+        public static final int absolutenews=0x7f07000c;
+        public static final int absoluteother=0x7f070010;
+        public static final int credentialswitch=0x7f070017;
+        public static final int imageView2=0x7f070012;
+        public static final int listaguide=0x7f07000b;
+        public static final int menuinfo=0x7f070014;
+        public static final int newscontenuto=0x7f070007;
+        public static final int newscreatore=0x7f070008;
+        public static final int newsdatapublicazione=0x7f070009;
+        public static final int newstablerow=0x7f070005;
+        public static final int newstitolo=0x7f070006;
+        public static final int password_edit=0x7f070004;
+        public static final int password_view=0x7f070003;
+        public static final int pluginswitch=0x7f070015;
+        public static final int portaleswitch=0x7f070016;
+        public static final int sfondo=0x7f07000f;
+        public static final int spinnerportali=0x7f070000;
+        public static final int splashimage=0x7f070011;
+        public static final int testatina=0x7f07000e;
+        public static final int username_edit=0x7f070002;
+        public static final int username_view=0x7f070001;
+        public static final int webview1=0x7f070013;
     }
     public static final class layout {
         public static final int alert_dialog_user_pass=0x7f030000;

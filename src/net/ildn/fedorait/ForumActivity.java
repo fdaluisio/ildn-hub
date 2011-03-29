@@ -1,6 +1,5 @@
 package net.ildn.fedorait;
 
-import net.ildn.GlobalMenu;
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;

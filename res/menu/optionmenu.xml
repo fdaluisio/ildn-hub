@@ -12,7 +12,8 @@
           
     <item android:id="@+id/portaleswitch"
     	  android:icon="@drawable/ic_tab_artists_grey"
-          android:title="@string/portaleswitch" />
+          android:title="@string/portaleswitch"
+          android:visible="false" />
 
     <item android:id="@+id/credentialswitch"
     	  android:icon="@drawable/ic_tab_artists_grey"

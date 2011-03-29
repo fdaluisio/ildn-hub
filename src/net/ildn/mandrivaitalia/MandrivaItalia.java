@@ -1,10 +1,11 @@
 package net.ildn.mandrivaitalia;
 
-import net.ildn.GlobalMenu;
+import net.ildn.Authentication;
 import net.ildn.OtherActivity;
 import net.ildn.fedorait.R;
 import android.app.TabActivity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
@@ -15,6 +16,7 @@ import android.widget.TextView;
 public class MandrivaItalia extends TabActivity {
 
 	private static final String LOG_ID = "mandrivaitalia.org - mandrivaActivity";
+	private int statusAuth = Authentication.NOT_ACCESS;
 
 	/*
 	 * (non-Javadoc)
@@ -31,7 +33,24 @@ public class MandrivaItalia extends TabActivity {
 		
 		TextView tv = new TextView(this);
 		tv = (TextView)findViewById(R.id.testatina);
-		tv.setText(getResources().getString(R.string.intestazionemandriva));
+		
+		/*
+		 * Login code
+		 */
+		SharedPreferences settings = getSharedPreferences(getString(R.string.ildnPreference), MODE_PRIVATE);
+		String portaledefault = settings.getString("portaledefault", "");
+		Authentication auth = new Authentication(this);		
+		if (portaledefault.equalsIgnoreCase(getString(R.string.intestazionemandriva))) {
+			statusAuth = auth.login();
+			Log.i(LOG_ID,"return auth status: "+ statusAuth);			
+		}
+		
+		tv = (TextView)findViewById(R.id.testatina);
+		if (statusAuth == Authentication.ACCESS) {
+			tv.setText(auth.getUsername()+ "@" + getResources().getString(R.string.intestazionemandriva));
+		}
+		else 
+			tv.setText(getResources().getString(R.string.intestazionemandriva));
 		tv.setBackgroundResource(R.color.mandriva);		
 		
 		LinearLayout l = new LinearLayout(this);

@@ -31,7 +31,7 @@ public class UserCredential {
 		try {
 			if (sp!=null && !sp.equalsIgnoreCase("")) {
 				String decifrato = SimpleCrypto.decrypt(SEED, sp);
-				Log.i(LOG_ID, "prefs decrypt is " + decifrato);
+				Log.i(LOG_ID, prefs +" decrypt is " + decifrato);
 				this.prefsValue = decifrato;
 			}
 			else 
@@ -55,9 +55,9 @@ public class UserCredential {
 		SharedPreferences.Editor editor = settings.edit();
 		
 		try {
-			if (!secret.equalsIgnoreCase("")) {
+			if (secret != null) {
 				String cifrato = SimpleCrypto.encrypt(SEED, secret);
-				Log.i(LOG_ID, "prefs crypt is " + cifrato);
+				Log.i(LOG_ID, secret + " crypt is " + cifrato);
 				editor.putString(prefs,cifrato);
 				editor.commit();
 			}

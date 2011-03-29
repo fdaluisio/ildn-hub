@@ -73,12 +73,10 @@ public class Message implements Comparable<Message> {
 		// una errata formattazione della data porta a mostrare una lista di
 		// contenuti vuota allora
 		// forzo la data a quella del device nel catch
-		Log.i("Fedora-it.org - Message",
-				"feed news pubdate fornita dal server:" + date.toString());
+		//Log.i("Fedora-it.org - Message",	"feed news pubdate fornita dal server:" + date.toString());
 		try {
 			this.date = preFORMATTER.parse(date.trim());
-			Log.i("Fedora-it.org - Message", "feed news pubdate preFormattata:"
-					+ this.date);
+			//Log.i("Fedora-it.org - Message", "feed news pubdate preFormattata:"+ this.date);
 		} catch (ParseException ex) {
 			Log.e("Fedora-it.org - Message",
 					"error preFORMATTER data from server");

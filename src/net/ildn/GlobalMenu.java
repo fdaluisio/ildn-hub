@@ -18,9 +18,12 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 public class GlobalMenu extends ListActivity {
 
@@ -28,7 +31,7 @@ public class GlobalMenu extends ListActivity {
 	private boolean js;
 	private String ildnuser;
 	private String ildnpasswd;
-	private String portaledefault;
+	private String portalelogin;
 	private String scelta;
 	private String sharedresource;
 
@@ -48,26 +51,14 @@ public class GlobalMenu extends ListActivity {
 		}
 	};
 
-	/**
-	 * @return the sharedresource
-	 */
 	public String getSharedresource() {
 		return sharedresource;
 	}
 
-	/**
-	 * @param sharedresource
-	 *            the sharedresource to set
-	 */
 	public void setSharedresource(String sharedresource) {
 		this.sharedresource = sharedresource;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see android.app.Activity#onCreateOptionsMenu(android.view.Menu)
-	 */
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		MenuInflater inflater = getMenuInflater();
@@ -75,11 +66,6 @@ public class GlobalMenu extends ListActivity {
 		return true;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see android.app.Activity#onOptionsItemSelected(android.view.MenuItem)
-	 */
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		// Handle item selection
@@ -93,68 +79,7 @@ public class GlobalMenu extends ListActivity {
 			AlertDialog alert = builder.create();
 			alert.show();
 			return true;
-/*
-		case R.id.portaleswitch:
-			AlertDialog.Builder builder3 = new AlertDialog.Builder(this);
-			builder3.setTitle(getString(R.string.portaledipartenza));
-			builder3.setCancelable(true);
-			setSharedresource(this.getString(R.string.ildnPreference));
-			SharedPreferences settings3 = getSharedPreferences(sharedresource,
-					0);
-			portaledefault = settings3.getString("portaledefault",
-					this.getString(R.string.intestazionefedora));
-			final String[] portalidisponibili = {
-					this.getString(R.string.intestazionedebian),
-					this.getString(R.string.intestazionefedora),
-					this.getString(R.string.intestazionesuse),
-					this.getString(R.string.intestazionemandriva) };
-			scelta = portaledefault;
-			builder3.setSingleChoiceItems(portalidisponibili, -1,
-					new OnClickListener() {
 
-						@Override
-						public void onClick(DialogInterface dialog, int which) {
-							Log.i(LOG_ID, "onClickListener onClick "
-									+ portalidisponibili[which]
-									+ " as been selected");
-							scelta = portalidisponibili[which];
-						}
-					});
-
-			builder3.setPositiveButton("Ok", new OnClickListener() {
-
-				@Override
-				public void onClick(DialogInterface dialog, int which) {
-					Log.i(LOG_ID,
-							"PositiveButton OnClickListener button pressed");
-					SharedPreferences settings = getSharedPreferences(
-							sharedresource, 0);
-					SharedPreferences.Editor editor = settings.edit();
-
-					/*
-					 * Salvo le preferenze
-					 
-			
-					editor.putString("portaledefault", scelta);
-					editor.commit();
-					
-				}
-			});
-
-			builder3.setNegativeButton("Annulla", new OnClickListener() {
-
-				@Override
-				public void onClick(DialogInterface dialog, int which) {
-					Log.i(LOG_ID,
-							"NegativeButton OnClickListener button pressed");
-					// non faccio nulla
-				}
-			});
-
-			AlertDialog alert3 = builder3.create();
-			alert3.show();
-			return true;
-*/
 		case R.id.pluginswitch:
 			AlertDialog.Builder builder2 = new AlertDialog.Builder(this);
 			builder2.setTitle(getString(R.string.sceglicosaabilitare));
@@ -240,14 +165,20 @@ public class GlobalMenu extends ListActivity {
 
 			LayoutInflater factory = LayoutInflater.from(this);
             final View textEntryView = factory.inflate(R.layout.alert_dialog_user_pass, null);
-            builder4.setView(textEntryView);            
+            builder4.setView(textEntryView);  
+            
+            // Inizializzazioni oggetti della grafica
+            final TextView testousername = (TextView)textEntryView.findViewById(R.id.username_view);
+            final TextView testopassword = (TextView)textEntryView.findViewById(R.id.password_view);
             final EditText tvname = (EditText)textEntryView.findViewById(R.id.username_edit);
             final EditText tvpass = (EditText)textEntryView.findViewById(R.id.password_edit);
             final Spinner  mSpinner = (Spinner)textEntryView.findViewById(R.id.spinnerportali);
             
+            // Inizializzazioni delle preferenze
 			SharedPreferences settings4 = getSharedPreferences(getString(R.string.ildnPreference),MODE_PRIVATE);
-			portaledefault = settings4.getString("portaledefault","");
-            
+			portalelogin = settings4.getString("portalelogin","nessuno");
+			final UserCredential uc = new UserCredential(this);
+			
 			final String portalidisponibili1[] = {
 					this.getString(R.string.intestazionedebian),
 					this.getString(R.string.intestazionefedora),
@@ -255,38 +186,73 @@ public class GlobalMenu extends ListActivity {
 					this.getString(R.string.intestazionemandriva),
 					"nessuno"};
             
+			// Inizializzazioni contenuto degli oggetti della grafica
             ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                     android.R.layout.simple_spinner_item, portalidisponibili1); 
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-            mSpinner.setPrompt(getString(R.string.portaledipartenza));
-
-            
-            // When programmatically creating views, make sure to set an ID
-            // so it will automatically save its instance state
+            mSpinner.setPrompt(getString(R.string.portaleswitch));
             mSpinner.setAdapter(adapter);
             int k=4; //portaledefault=nessuno
             for (int i=0; i<portalidisponibili1.length; i++) {
             	Log.i(LOG_ID, "portale disponibile: " + portalidisponibili1[i]);
-            	if (portalidisponibili1[i].equalsIgnoreCase(portaledefault)) {
+            	if (portalidisponibili1[i].equalsIgnoreCase(portalelogin)) {
             		k=i;
             		Log.i(LOG_ID, "portale trovato: " + portalidisponibili1[i]+ " in posizione k: "+k);
             		break;
             	}
             }
-            mSpinner.setSelection(k);            
-			/*
+            mSpinner.setSelection(k);
+            
+            mSpinner.setOnItemSelectedListener(new OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+                	//selectedItemView.
+                    Log.i(LOG_ID, "selectedItemView is "+selectedItemView);
+                    String st = (String)mSpinner.getAdapter().getItem(position);
+                    if (st!=null && !st.equalsIgnoreCase("nessuno")) {
+                    	Log.i(LOG_ID, "elemento diverso da nessuno: "+st);
+                    	testousername.setVisibility(View.VISIBLE);
+                    	testopassword.setVisibility(View.VISIBLE);
+                    	tvname.setVisibility(View.VISIBLE);
+                    	tvname.requestFocus();
+                    	tvname.setText(uc.getPrefs("ildnuser"));
+                    	tvname.setFocusable(true);
+                    	tvpass.setVisibility(View.VISIBLE);
+                    	tvpass.setFocusable(true);
+                    	tvpass.setText(uc.getPrefs("ildnpasswd"));
+
+                    }
+                    else {
+                    	Log.i(LOG_ID, "elemento uguale a nessuno");
+                    	testousername.setVisibility(View.GONE);
+                    	testopassword.setVisibility(View.GONE);
+                    	tvname.setText("");
+                    	tvname.setFocusable(false);
+                    	tvpass.setText("");
+                    	tvpass.setFocusable(false);
+                    	tvname.setVisibility(View.GONE);
+                    	tvpass.setVisibility(View.GONE);
+                    }
+                }
+
+                @Override
+                public void onNothingSelected(AdapterView<?> parentView) {
+                    ;
+                }
+
+            });
+			
+            /*	
 			 * Loading SharedPreferences for ILDN username/password
 			 */            
             
-            final UserCredential uc = new UserCredential(this);
             ildnuser=uc.getPrefs("ildnuser");
             ildnpasswd=uc.getPrefs("ildnpasswd");
             tvname.setText(ildnuser);
-            tvpass.setText(ildnpasswd);
-            //Log.i(LOG_ID, "utente: "+ildnuser+" passwd: "+ildnpasswd);
-			
+            tvpass.setText(ildnpasswd);             
+            
             /*
-             * Setting Ok - Annulla botton
+             * Setting Ok botton
              */
 			builder4.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
 				
@@ -303,36 +269,31 @@ public class GlobalMenu extends ListActivity {
 						scelta = mSpinner.getSelectedItem().toString();
 						Log.i(LOG_ID,"Portale di default:"+scelta);
 
-    					/*
-    					 * Salvo la preferenze portaledefault
-    					 */
-    					editor.putString("portaledefault",  scelta);
-    					boolean val = editor.commit();
-    					Log.i(LOG_ID, "return commit: "+ val);
-
-                    	/*
-                    	 * Save username/password and portaledefault in sharedPreference
-                    	 */
     					if (scelta.equalsIgnoreCase("nessuno")) {
     						//Clean dell'Account Manager
     						uc.setPrefs("ildnuser", "");
     						uc.setPrefs("ildnpasswd", "");
+    						editor.putString("portalelogin",  "nessuno");
+        					editor.putString("portaledefault",  "nessuno");
     						Log.i(LOG_ID, "clean dell'Account Manager ");
     					}
     					else {
+    						editor.putString("portalelogin",  scelta);
+        					editor.putString("portaledefault",  scelta);
     						uc.setPrefs("ildnuser", tvname.getText().toString());
     						uc.setPrefs("ildnpasswd", tvpass.getText().toString());
     					}
-    					portaledefault=scelta;
-    					Log.i(LOG_ID,"Portale di default valore nello spinner:"+mSpinner.getSelectedItem().toString());
 
-
+    					/*
+    					 * Salvo la preferenze portalelogin/portaledefault
+    					 */
+    					
+    					boolean val = editor.commit();
+    					Log.i(LOG_ID, "return commit: "+ val);
     					
     					/* 
     					 * Start Activity for default portal
     					 */
-    					
-    					
     					Intent mainIntent = null;
     					if (scelta
     							.equalsIgnoreCase(getString(R.string.intestazionedebian))) {
@@ -358,7 +319,10 @@ public class GlobalMenu extends ListActivity {
                        
                     }
 			});
-			
+
+			/*
+			 * Setting Annulla botton
+			 */
             builder4.setNegativeButton("Annulla", new DialogInterface.OnClickListener() {
             	
             		@Override
@@ -370,15 +334,15 @@ public class GlobalMenu extends ListActivity {
                     }
             });
 			
-            // Show alert			
 			AlertDialog alert4 = builder4.create();
 			alert4.show();
-			
 			return true;
+
 		default:
 			return super.onOptionsItemSelected(item);
 		}
 	}
+
 
 	public void showProgressDialog() {
 		progressDialog = ProgressDialog.show(this, "",

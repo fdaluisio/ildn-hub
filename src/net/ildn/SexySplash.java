@@ -9,7 +9,7 @@ import android.os.Handler;
 
 public class SexySplash extends Activity {
 
-	private final int SPLASH_DISPLAY_LENGHT = 1000;
+	private final int SPLASH_DISPLAY_LENGHT = 2000;
 	private String portaledefault = "";
 
 	/** Called when the activity is first created. */
@@ -17,29 +17,26 @@ public class SexySplash extends Activity {
 	@Override
 	public void onCreate(Bundle icicle) {
 		super.onCreate(icicle);
-		setContentView(R.layout.sexysplash);
+		setContentView(R.layout.splash);
 
 		/*
 		 * Loading SharedPreferences per il portale di default
 		 */
-
 		SharedPreferences settings = getSharedPreferences(
 				this.getString(R.string.ildnPreference), 0);
 		portaledefault = settings.getString("portaledefault",
-				this.getString(R.string.intestazionefedora));
-
-		/*
-		 * New Handler to start the Menu-Activity and close this Splash-Screen
-		 * after some seconds.
-		 */
+				"nessuno");
 
 		new Handler().postDelayed(new Runnable() {
 			@Override
 			public void run() {
 
-				/* Create an Intent that will start the Menu-Activity. */
 				Intent mainIntent;
-				if (portaledefault
+				
+				if (portaledefault.equalsIgnoreCase("nessuno")) {
+					//Activity ListaPortali
+					mainIntent = new Intent("net.ildn.ListaPortali");
+				} else if (portaledefault
 						.equalsIgnoreCase(getString(R.string.intestazionedebian))) {
 					mainIntent = new Intent(getString(R.string.portaledebian));
 				} else if (portaledefault
@@ -56,8 +53,8 @@ public class SexySplash extends Activity {
 				else
 					mainIntent = new Intent(getString(R.string.portalefedora));
 
-				SexySplash.this.startActivity(mainIntent);
-				SexySplash.this.finish();
+				startActivity(mainIntent);
+				finish();
 
 			}
 		}, SPLASH_DISPLAY_LENGHT);

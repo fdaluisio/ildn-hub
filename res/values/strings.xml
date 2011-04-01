@@ -13,16 +13,17 @@
     <string name="otheractivity">Attività Altro</string>
     <string name="webcontentactivity">Attività WebContent</string>
     <string name="splashactivity">Attività Splashscreen</string>
+    <string name="listaportaliactivity">Attività Lista Portali</string>
     
     <!-- Etichette di cosmesi varie -->
     <string name="loading">Caricamento...</string>
     <string name="pluginswitch">Opzioni</string>
     <string name="sceglicosaabilitare">Scegli cosa abilitare</string>
-    <string name="portaledipartenza">Scegli Portale di partenza</string>
+    <string name="portaledipartenza">Portale di partenza</string>
     <string name="portaleswitch">Portali ILDN</string>
     <string name="credentialswitch">Accesso ILDN</string>
     <string name="menuinfo">Credits</string>
-    <string name="creditsildn">ILDN: Italian Linux Distro Network, è il primo network italiano ed europeo dedicato alle maggiori distribuzioni GNU/Linux.\n\nPer maggiori informazioni: www.ildn.net</string>
+    <string name="creditsildn">ILDN: Italian Linux Distro Network. \n Il primo network italiano ed europeo dedicato alle maggiori distribuzioni GNU/Linux.\n\nPer maggiori informazioni: www.ildn.net</string>
     <string name="ildnPreference">ildnPreference</string>
     <string name="flash">Adobe Flash</string>
     <string name="js">Javascript</string>

@@ -36,7 +36,7 @@ public class OtherActivity extends GlobalMenu {
 		o_list.trimToSize();
 		Log.i(fonte + " - OtherActivity",
 				"Dimensione o_list dopo: " + o_list.size());
-		setListAdapter(new ArrayAdapter<String>(this, R.layout.list_item,
+		setListAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,
 				o_list));
 
 	}

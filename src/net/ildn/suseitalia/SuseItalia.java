@@ -18,19 +18,13 @@ public class SuseItalia extends TabActivity {
 	private static final String LOG_ID = "suseitalia.org - debianitaliaActivity";
 	private int statusAuth = Authentication.NOT_ACCESS;
 	
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see android.app.Activity#onCreate(android.os.Bundle)
-	 */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
 		Log.i(LOG_ID, "Richiamato onCreate()");
 		setContentView(R.layout.main);
-		Resources res = getResources(); // Resource object to get Drawables
-		
+		Resources res = getResources();
 		TextView tv = new TextView(this);
 		tv = (TextView)findViewById(R.id.testatina);
 		
@@ -38,13 +32,12 @@ public class SuseItalia extends TabActivity {
 		 * Login code
 		 */
 		SharedPreferences settings = getSharedPreferences(getString(R.string.ildnPreference), MODE_PRIVATE);
-		String portaledefault = settings.getString("portaledefault", "");
+		String portalelogin = settings.getString("portalelogin", "nessuno");
 		Authentication auth = new Authentication(this);		
-		if (portaledefault.equalsIgnoreCase(getString(R.string.intestazionesuse))) {
+		if (portalelogin.equalsIgnoreCase(getString(R.string.intestazionesuse))) {
 			statusAuth = auth.login();
 			Log.i(LOG_ID,"return auth status: "+ statusAuth);			
-		}
-		
+		}		
 		tv = (TextView)findViewById(R.id.testatina);
 		if (statusAuth == Authentication.ACCESS) {
 			tv.setText(auth.getUsername()+ "@" + getResources().getString(R.string.intestazionesuse));

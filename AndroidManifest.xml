@@ -139,5 +139,14 @@
             </intent-filter>
         </activity>
         
+        <activity android:name="net.ildn.ListaPortali" 
+       			  android:label="@string/listaportaliactivity"
+          		  android:theme="@android:style/Theme.NoTitleBar">
+          <intent-filter>
+                <action android:name="net.ildn.ListaPortali" />
+                <category android:name="android.intent.category.DEFAULT" />
+          </intent-filter>
+        </activity>
+        
     </application>
 </manifest>

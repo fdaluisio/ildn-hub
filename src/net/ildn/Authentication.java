@@ -32,7 +32,7 @@ import android.webkit.CookieSyncManager;
 
 public class Authentication {
 	
-	private String portaledefault;
+	private String portalelogin;
 	private String username;
 	private Context cx;
 	
@@ -49,8 +49,14 @@ public class Authentication {
 	public int login() {
 		SharedPreferences settings = cx.getSharedPreferences(
 				cx.getString(R.string.ildnPreference), 0);
-		this.portaledefault = settings.getString("portaledefault",
-				cx.getString(R.string.intestazionefedora));
+		this.portalelogin = settings.getString("portalelogin",
+				"nessuno");
+		
+		final UserCredential uc = new UserCredential(cx);
+        String ildnuser=uc.getPrefs("ildnuser");
+        String ildnpasswd=uc.getPrefs("ildnpasswd");
+        
+        if (ildnpasswd.equalsIgnoreCase("") || ildnuser.equalsIgnoreCase("")) return Authentication.NOT_ACCESS;
 		
 		HttpClient con = new DefaultHttpClient();
 		HttpContext httpcontext = new BasicHttpContext();
@@ -60,7 +66,7 @@ public class Authentication {
 		httpcontext.setAttribute(ClientContext.COOKIE_STORE, cookieStore);
 			    
 		try {
-			String loginurl = "http://www." + portaledefault + "/user/login";
+			String loginurl = "http://www." + portalelogin + "/user/login";
 			Log.i(LOG_ID, "login url " + loginurl);
 			HttpGet httpget = new HttpGet(loginurl);
 
@@ -81,9 +87,7 @@ public class Authentication {
 				HttpParams params = con.getParams(); 
 				HttpClientParams.setRedirecting(params, false);
 
-				final UserCredential uc = new UserCredential(cx);
-	            String ildnuser=uc.getPrefs("ildnuser");
-	            String ildnpasswd=uc.getPrefs("ildnpasswd");
+				
 	            
 				List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(2);
 		        nameValuePairs.add(new BasicNameValuePair("name", ildnuser));
@@ -107,19 +111,19 @@ public class Authentication {
 					Header[] headers = response.getHeaders("Location");
 					String location = headers[0].toString();
 					this.username=location.substring(location.lastIndexOf("/")+1, location.length());
-					Log.i(LOG_ID, "Username grabbed to " + this.username + "from: "+ portaledefault);
+					Log.i(LOG_ID, "Username grabbed to " + this.username + "from: "+ portalelogin);
 				}
 				else {
-					return Authentication.ERROR;
+					return Authentication.NOT_ACCESS;
 				}
 					
 			}
 			else 
-				return Authentication.ERROR;			
+				return Authentication.NOT_ACCESS;			
 		}
 		catch (Exception e) {
 			Log.i(LOG_ID, "Errore in Authentication" + e.getMessage());
-			return Authentication.NOT_ACCESS;
+			return Authentication.ERROR;
 		}
 		return Authentication.ACCESS;
 	}

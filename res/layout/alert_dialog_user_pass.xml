@@ -10,6 +10,10 @@
         android:layout_marginRight="10dip" 
     	android:id="@+id/spinnerportali">
     </Spinner>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
     
     <TextView 
         android:id="@+id/username_view"
@@ -19,7 +23,8 @@
         android:layout_marginRight="10dip"
         android:text="@string/alert_dialog_username"
         android:gravity="left"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:focusable="false" />
     
             
     <EditText
@@ -29,10 +34,10 @@
         android:layout_marginLeft="10dip"
         android:layout_marginRight="10dip"
         android:scrollHorizontally="true"
-        android:autoText="false"
-        android:capitalize="none"
         android:gravity="fill_horizontal"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:inputType="text"
+         />
 
     <TextView
         android:id="@+id/password_view"
@@ -42,7 +47,8 @@
         android:layout_marginRight="10dip"
         android:text="@string/alert_dialog_password"
         android:gravity="left"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:focusable="false" />
             
     <EditText
         android:id="@+id/password_edit"
@@ -51,10 +57,9 @@
         android:layout_marginLeft="10dip"
         android:layout_marginRight="10dip"
         android:scrollHorizontally="true"
-        android:autoText="false"
-        android:capitalize="none"
         android:gravity="fill_horizontal"
         android:password="true"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-        
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:inputType="textPassword" />
+    </LinearLayout>    
 </LinearLayout>

@@ -23,7 +23,7 @@
     <string name="portaleswitch">Portali ILDN</string>
     <string name="credentialswitch">Accesso ILDN</string>
     <string name="menuinfo">Credits</string>
-    <string name="creditsildn">ILDN: Italian Linux Distro Network. \n Il primo network italiano ed europeo dedicato alle maggiori distribuzioni GNU/Linux.\n\nPer maggiori informazioni: www.ildn.net</string>
+    <string name="creditsildn">ILDN: Italian Linux Distro Network.\nIl primo network italiano ed europeo dedicato alle maggiori distribuzioni GNU/Linux.\n\nPer maggiori informazioni: www.ildn.net</string>
     <string name="ildnPreference">ildnPreference</string>
     <string name="flash">Adobe Flash</string>
     <string name="js">Javascript</string>
@@ -37,7 +37,7 @@
     <color name="fedora">#1458ab</color>
     <string name="fedoracolor">#1458ab</string>    
     <string name="fedorafeednews">http://www.fedora-it.org/news/feed/</string>
-    <string name="fedorafeedforum">http://www.fedora-it.org/forum/sezione/debian/programmi/feed</string>
+    <string name="fedorafeedforum">http://staging.ildn.net/forum/active/feed</string>
     <string name="fedorafeedguide">http://www.fedora-it.org/guide/feed/</string>
     <string name="fedorafeedblog">http://www.fedora-it.org/blog/feed/</string>
     

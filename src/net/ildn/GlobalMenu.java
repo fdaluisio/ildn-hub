@@ -214,13 +214,22 @@ public class GlobalMenu extends ListActivity {
                     	testousername.setVisibility(View.VISIBLE);
                     	testopassword.setVisibility(View.VISIBLE);
                     	tvname.setVisibility(View.VISIBLE);
-                    	tvname.requestFocus();
+                    	
+                    	tvname.setFocusable(true);
+                    	tvname.setFocusableInTouchMode(true);
+                    	
+                    	boolean result = tvname.requestFocus();
+                    	Log.i(LOG_ID, "username requestFocusFromTouch: " + result);
+                    	
                     	tvname.setText(uc.getPrefs("ildnuser"));
                     	tvname.setFocusable(true);
                     	tvpass.setVisibility(View.VISIBLE);
                     	tvpass.setFocusable(true);
+                    	tvpass.setFocusableInTouchMode(true);
                     	tvpass.setText(uc.getPrefs("ildnpasswd"));
-
+                    	/*
+                    	mgr.showSoftInput(tvpass, InputMethodManager.SHOW_FORCED);
+						*/
                     }
                     else {
                     	Log.i(LOG_ID, "elemento uguale a nessuno");

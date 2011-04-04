@@ -1,15 +1,24 @@
 package net.ildn.fedorait;
 
-import android.app.Activity;
+import java.util.ArrayList;
+
+import net.ildn.DataRetriever;
+import net.ildn.GlobalMenu;
+import net.ildn.NewsAdapter;
+import net.ildn.NewsItemRow;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.TextView;
+import android.view.View;
+import android.widget.ListView;
 
-public class ForumActivity extends Activity {
-//public class ForumActivity extends GlobalMenu {	
-	//private DataRetriever dataRetriever;
+//public class ForumActivity extends Activity {
+public class ForumActivity extends GlobalMenu {	
+	private DataRetriever dataRetriever;
 	private static final String LOG_ID = "Fedora-it.org - ForumActivity";
-/*	
+	
+	
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 		super.onListItemClick(l, v, position, id);
@@ -22,19 +31,20 @@ public class ForumActivity extends Activity {
 		showme.putExtra("baseurl", messages.get(position).getLink().toString());
 		startActivity(showme);
 	}
-*/
+
 	
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		Log.i(LOG_ID, "Richiamato onCreate()");
-		
+/*		
 		TextView textview = new TextView(this);
 		textview.setText("This is the Forum tab");
 		setContentView(textview);
-	
-	/*	
+*/	
+
+		
 		n_adapter = new NewsAdapter(this, R.layout.feedforumrow,
 				new ArrayList<NewsItemRow>(),getString(R.string.intestazionefedora));
 		setListAdapter(this.n_adapter);
@@ -42,7 +52,7 @@ public class ForumActivity extends Activity {
 		dataRetriever = new DataRetriever(urlFeed, this);
 		showProgressDialog();
 		dataRetriever.start();
-	*/	
+		
 	}
 
 }

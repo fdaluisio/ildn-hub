@@ -9,7 +9,7 @@ import android.os.Handler;
 
 public class SexySplash extends Activity {
 
-	private final int SPLASH_DISPLAY_LENGHT = 2000;
+	private final int SPLASH_DISPLAY_LENGHT = 1000;
 	private String portaledefault = "";
 
 	/** Called when the activity is first created. */
@@ -32,11 +32,14 @@ public class SexySplash extends Activity {
 			public void run() {
 
 				Intent mainIntent;
-				
+				/*
 				if (portaledefault.equalsIgnoreCase("nessuno")) {
 					//Activity ListaPortali
 					mainIntent = new Intent("net.ildn.ListaPortali");
-				} else if (portaledefault
+					//mainIntent = new Intent("net.ildn.CoverFlowExample");
+				} else 
+				*/
+				if (portaledefault
 						.equalsIgnoreCase(getString(R.string.intestazionedebian))) {
 					mainIntent = new Intent(getString(R.string.portaledebian));
 				} else if (portaledefault

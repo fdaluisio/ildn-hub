@@ -8,7 +8,12 @@ import java.util.Date;
 import java.util.Locale;
 import android.util.Log;
 
-public class Message implements Comparable<Message> {
+public class Message implements Comparable<Message>,Cloneable {
+
+	@Override
+	protected Object clone() throws CloneNotSupportedException {
+		return super.clone();
+	}
 
 	static SimpleDateFormat FORMATTER = new SimpleDateFormat(
 			"EEEEE, d MMM yyyy");
@@ -23,7 +28,7 @@ public class Message implements Comparable<Message> {
 	private String creator = " - ";
 
 	public String getCreator() {
-		return this.creator;
+		return creator;
 	}
 
 	public void setCreator(String creator) {
@@ -84,15 +89,6 @@ public class Message implements Comparable<Message> {
 		}
 	}
 
-	public Message copy() {
-		Message copy = new Message();
-		copy.title = title;
-		copy.link = link;
-		copy.description = description;
-		copy.date = date;
-		return copy;
-	}
-
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
@@ -107,6 +103,9 @@ public class Message implements Comparable<Message> {
 		sb.append('\n');
 		sb.append("Description: ");
 		sb.append(description);
+		sb.append('\n');
+		sb.append("Creator: ");
+		sb.append(creator);
 		return sb.toString();
 	}
 

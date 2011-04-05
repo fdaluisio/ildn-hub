@@ -10,7 +10,8 @@
 		android:layout_width="fill_parent" 
 		android:layout_height="fill_parent"
 		android:layout_x="1px"
-		android:layout_y="0px" >
+		android:layout_y="0px"
+		android:layoutAnimation="@anim/layout_bottom_to_top_slide" >
 	</ListView>
 	
 </AbsoluteLayout>

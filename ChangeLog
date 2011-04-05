@@ -1,3 +1,55 @@
+2011-04-05  fdaluisio <fdaluisio@fedoraproject.org>
+
+  * src/net/ildn/NewsAdapter.java: Set bold text style to Creatore and data in
+  Adapter
+
+  * src/net/ildn/Splash.java: Fix image reflection in splash screen
+
+  * AndroidManifest.xml, gen/net/ildn/fedorait/R.java, res/drawable/debian.png,
+  res/drawable/fedora.png, res/drawable/gentoo.png, res/drawable/ildn.png,
+  res/drawable/mandriva.png, res/drawable/nero.png, res/drawable/slack.png,
+  res/drawable/suse.png, res/layout/alert_dialog_user_pass.xml,
+  res/layout/cover.xml, res/values/strings.xml, src/net/ildn/CoverFlow.java,
+  src/net/ildn/GlobalMenu.java, src/net/ildn/SexySplash.java,
+  src/net/ildn/Splash.java, src/net/ildn/fedorait/ForumActivity.java: New
+  splash CoverFlow
+
+2011-04-04  Stefano Di Luca <diluca.stefano@gmail.com>
+
+  * src/net/ildn/feed/AndroidSaxFeedParser.java,
+  src/net/ildn/feed/BaseFeedParser.java, src/net/ildn/feed/Message.java: Get
+  creator field from rss
+
+2011-04-01  fdaluisio <fdaluisio@fedoraproject.org>
+
+  * AndroidManifest.xml, gen/net/ildn/fedorait/R.java,
+  res/drawable/debianlogo.png, res/drawable/fedoralogo.png,
+  res/drawable/mandrivalogo.png, res/drawable/splash_app_ildn.png,
+  res/drawable/suselogo.png, res/layout/alert_dialog_user_pass.xml,
+  res/layout/imagerow.xml, res/layout/layoutguide.xml,
+  res/layout/list_item.xml, res/layout/listaportali.xml, res/layout/splash.xml,
+  res/values/strings.xml, src/net/ildn/Authentication.java,
+  src/net/ildn/GlobalMenu.java, src/net/ildn/ImageAdapter.java,
+  src/net/ildn/ListaPortali.java, src/net/ildn/OtherActivity.java,
+  src/net/ildn/SexySplash.java, src/net/ildn/debianitalia/DebianItalia.java,
+  src/net/ildn/fedorait/fedorait.java,
+  src/net/ildn/mandrivaitalia/MandrivaItalia.java,
+  src/net/ildn/suseitalia/SuseItalia.java: Modify Splash boot, introducing
+  activity for user without default portale selected. Fix dialog Login
+  User/Pass
+
+2011-03-29  fdaluisio <fdaluisio@fedoraproject.org>
+
+  * ChangeLog, gen/net/ildn/fedorait/R.java,
+  res/layout/alert_dialog_user_pass.xml, res/menu/optionmenu.xml,
+  res/values/strings.xml, src/net/ildn/Authentication.java,
+  src/net/ildn/GlobalMenu.java, src/net/ildn/UserCredential.java,
+  src/net/ildn/debianitalia/DebianItalia.java,
+  src/net/ildn/fedorait/ForumActivity.java,
+  src/net/ildn/fedorait/fedorait.java, src/net/ildn/feed/Message.java,
+  src/net/ildn/mandrivaitalia/MandrivaItalia.java,
+  src/net/ildn/suseitalia/SuseItalia.java: Add Login function for site
+
 2011-03-27  fdaluisio <fdaluisio@fedoraproject.org>
 
   * gen/net/ildn/fedorait/R.java, res/layout/alert_dialog_user_pass.xml,

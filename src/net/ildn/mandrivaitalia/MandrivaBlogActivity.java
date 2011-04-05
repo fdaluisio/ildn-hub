@@ -38,7 +38,7 @@ public class MandrivaBlogActivity extends GlobalMenu {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		Log.i(LOG_ID, "Richiamato onCreate()");
-		super.onCreate(savedInstanceState);
+		setContentView(R.layout.layoutnews);
 		n_adapter = new NewsAdapter(this, R.layout.feedblogrow,
 				new ArrayList<NewsItemRow>(),getString(R.string.intestazionemandriva));
 		setListAdapter(this.n_adapter);

@@ -38,7 +38,7 @@ public class SuseGuideActivity extends GlobalMenu {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		Log.i(LOG_ID, "Richiamato onCreate()");
-		super.onCreate(savedInstanceState);
+		setContentView(R.layout.layoutnews);
 		n_adapter = new NewsAdapter(this, R.layout.feedguiderow,
 				new ArrayList<NewsItemRow>(),getString(R.string.intestazionesuse));
 		setListAdapter(this.n_adapter);

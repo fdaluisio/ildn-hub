@@ -34,6 +34,7 @@ public class NewsActivity extends GlobalMenu {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		Log.i(LOG_ID, "Richiamato onCreate()");
+		setContentView(R.layout.layoutnews);
 		n_adapter = new NewsAdapter(this, R.layout.feednewsrow,
 				new ArrayList<NewsItemRow>(),getString(R.string.intestazionefedora));
 		setListAdapter(this.n_adapter);

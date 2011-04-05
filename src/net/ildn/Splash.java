@@ -49,9 +49,9 @@ public class Splash extends Activity {
 	     CoverFlow coverFlow = (CoverFlow)findViewById(R.id.coverflow);
 	     coverFlow.setAdapter(new ImageAdapter(this));
 	     ImageAdapter coverImageAdapter =  new ImageAdapter(this);
-	     //coverImageAdapter.createReflectedImages();
+	     coverImageAdapter.createReflectedImages();
 	     coverFlow.setAdapter(coverImageAdapter);
-	     coverFlow.setSpacing(-45);
+	     coverFlow.setSpacing(-15);
 	     coverFlow.setSelection(1, true);
 	     coverFlow.setAnimationDuration(1000);
 
@@ -187,7 +187,7 @@ public class Splash extends Activity {
 	     }
 	
 	     public View getView(int position, View convertView, ViewGroup parent) {
-	
+	    /*
 	      //Use this code if you want to load from resources
 	         ImageView i = new ImageView(mContext);
 	         i.setImageResource(mImageIds[position]);
@@ -198,8 +198,8 @@ public class Splash extends Activity {
 	         BitmapDrawable drawable = (BitmapDrawable) i.getDrawable();
 	         drawable.setAntiAlias(true);
 	         return i;
-	      
-	      //return mImages[position];
+	      */
+	      return mImages[position];
 	     }
 	   /** Returns the size (0.0f to 1.0f) of the views 
 	      * depending on the 'offset' to the center. */ 

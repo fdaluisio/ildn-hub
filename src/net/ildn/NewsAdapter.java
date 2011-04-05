@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import net.ildn.fedorait.R;
 import android.content.Context;
+import android.graphics.Typeface;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -47,7 +48,9 @@ public class NewsAdapter extends ArrayAdapter<NewsItemRow> {
 			TextView descrizione = (TextView) v
 					.findViewById(R.id.newscontenuto);
 			creatore.setText("Creato da:  " + o.getCreatore());
+			creatore.setTypeface(Typeface.DEFAULT_BOLD);
 			data.setText("Pubblicato:  " + o.getDatapub());
+			data.setTypeface(Typeface.DEFAULT_BOLD);
 			//meglio uno switch?			
 			if (fonte.equalsIgnoreCase(cx.getString(R.string.intestazionefedora))) {
 				titolo.setTextColor(cx.getResources().getColor(R.color.fedora));

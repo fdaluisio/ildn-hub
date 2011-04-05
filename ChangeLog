@@ -1,5 +1,22 @@
 2011-04-05  fdaluisio <fdaluisio@fedoraproject.org>
 
+  * ChangeLog, gen/net/ildn/fedorait/R.java,
+  res/anim/layout_bottom_to_top_slide.xml, res/anim/slide_left.xml,
+  res/anim/slide_right.xml, res/layout/layoutnews.xml,
+  src/net/ildn/debianitalia/DebianBlogActivity.java,
+  src/net/ildn/debianitalia/DebianGuideActivity.java,
+  src/net/ildn/debianitalia/DebianNewsActivity.java,
+  src/net/ildn/fedorait/BlogActivity.java,
+  src/net/ildn/fedorait/GuideActivity.java,
+  src/net/ildn/fedorait/NewsActivity.java,
+  .../ildn/mandrivaitalia/MandrivaBlogActivity.java,
+  .../ildn/mandrivaitalia/MandrivaGuideActivity.java,
+  .../ildn/mandrivaitalia/MandrivaNewsActivity.java,
+  src/net/ildn/suseitalia/SuseBlogActivity.java,
+  src/net/ildn/suseitalia/SuseGuideActivity.java,
+  src/net/ildn/suseitalia/SuseNewsActivity.java: Add Animation in ListView
+  News/Guide/Blog cross-site
+
   * src/net/ildn/NewsAdapter.java: Set bold text style to Creatore and data in
   Adapter
 

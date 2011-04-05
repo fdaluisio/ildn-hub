@@ -38,13 +38,8 @@ public class ForumActivity extends GlobalMenu {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		Log.i(LOG_ID, "Richiamato onCreate()");
-/*		
-		TextView textview = new TextView(this);
-		textview.setText("This is the Forum tab");
-		setContentView(textview);
-*/	
 
-		
+		setContentView(R.layout.layoutnews);
 		n_adapter = new NewsAdapter(this, R.layout.feedforumrow,
 				new ArrayList<NewsItemRow>(),getString(R.string.intestazionefedora));
 		setListAdapter(this.n_adapter);

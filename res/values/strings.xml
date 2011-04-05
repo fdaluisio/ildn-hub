@@ -37,7 +37,7 @@
     <color name="fedora">#1458ab</color>
     <string name="fedoracolor">#1458ab</string>    
     <string name="fedorafeednews">http://www.fedora-it.org/news/feed/</string>
-    <string name="fedorafeedforum">http://staging.ildn.net/forum/active/feed</string>
+    <string name="fedorafeedforum">http://www.fedora-it.org/forum/active/feed</string>
     <string name="fedorafeedguide">http://www.fedora-it.org/guide/feed/</string>
     <string name="fedorafeedblog">http://www.fedora-it.org/blog/feed/</string>
     
@@ -48,6 +48,7 @@
     <string name="debiancolor">#b93541</string>
     <string name="debianactivity">Attività DebianItalia</string>    
     <string name="debianfeednews">http://www.debianitalia.org/news/feed/</string>
+    <string name="debianfeedforum">http://www.debianitalia.org/forum/active/feed</string>
     <string name="debianfeedguide">http://www.debianitalia.org/guide/feed/</string>
     <string name="debianfeedblog">http://www.debianitalia.org/blog/feed/</string>
     
@@ -58,6 +59,7 @@
     <string name="susecolor">#6ca430</string>
     <string name="suseactivity">Attività SuseItalia</string>    
     <string name="susefeednews">http://www.suseitalia.org/news/feed/</string>
+    <string name="susefeedforum">http://www.suseitalia.org/forum/active/feed</string>
     <string name="susefeedguide">http://www.suseitalia.org/guide/feed/</string>
     <string name="susefeedblog">http://www.suseitalia.org/blog/feed/</string>
  
@@ -68,6 +70,7 @@
     <string name="mandrivacolor">#5979bf</string>
     <string name="mandrivaactivity">Attività MandrivaItalia</string>    
     <string name="mandrivafeednews">http://www.mandrakeitalia.org/news/feed/</string>
+    <string name="mandrivafeedforum">http://www.mandrakeitalia.org/forum/active/feed</string>
     <string name="mandrivafeedguide">http://www.mandrakeitalia.org/guide/feed/</string>
     <string name="mandrivafeedblog">http://www.mandrakeitalia.org/blog/feed/</string>
     

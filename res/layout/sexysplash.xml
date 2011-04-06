@@ -57,7 +57,7 @@
 	    
  	<ImageView 
  		android:id="@+id/imageView2" 
- 		android:src="@drawable/splash_image" 
+ 		android:src="@drawable/fedora" 
  		android:layout_width="wrap_content" 
  		android:paddingLeft="12dp"
  		android:paddingRight="12dp"

@@ -5,6 +5,7 @@ import net.ildn.DataRetriever;
 import net.ildn.GlobalMenu;
 import net.ildn.NewsAdapter;
 import net.ildn.NewsItemRow;
+import net.ildn.WebContent;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;

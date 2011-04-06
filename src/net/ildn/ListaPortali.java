@@ -21,10 +21,10 @@ public class ListaPortali extends GlobalMenu {
 		ArrayList<ImageView> listaPortali = new ArrayList<ImageView>();
 		
 		final int portalidisponibili[] = {
-				R.drawable.debianlogo,
-				R.drawable.fedoralogo,
-				R.drawable.suselogo,
-				R.drawable.mandrivalogo
+				R.drawable.debian,
+				R.drawable.fedora,
+				R.drawable.suse,
+				R.drawable.mandriva
 		};
 		
 		for (int i=0; i<portalidisponibili.length; i++) {	

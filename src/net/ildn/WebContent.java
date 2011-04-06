@@ -1,5 +1,6 @@
-package net.ildn.fedorait;
+package net.ildn;
 
+import net.ildn.fedorait.R;
 import android.app.Activity;
 import android.app.Dialog;
 import android.app.ProgressDialog;

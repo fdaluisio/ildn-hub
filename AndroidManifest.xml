@@ -121,11 +121,11 @@
             </intent-filter>
         </activity>
 
-       	<activity android:name=".WebContent" 
+       	<activity android:name="net.ildn.WebContent" 
        			  android:label="@string/webcontentactivity"
           		  android:theme="@android:style/Theme">
           <intent-filter>
-                <action android:name="net.ildn.fedorait.WebContent" />
+                <action android:name="net.ildn.WebContent" />
                 <category android:name="android.intent.category.DEFAULT" />
           </intent-filter>
         </activity>

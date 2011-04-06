@@ -12,8 +12,8 @@ import net.ildn.DataRetriever;
 import net.ildn.GlobalMenu;
 import net.ildn.NewsAdapter;
 import net.ildn.NewsItemRow;
+import net.ildn.WebContent;
 import net.ildn.fedorait.R;
-import net.ildn.fedorait.WebContent;
 
 public class SuseGuideActivity extends GlobalMenu {
 

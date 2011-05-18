@@ -1,5 +1,10 @@
 2011-04-06  fdaluisio <fdaluisio@fedoraproject.org>
 
+  * ChangeLog, res/drawable/debianlogo.png, res/drawable/fedoralogo.png,
+  res/drawable/mandrivalogo.png, res/drawable/nero.png,
+  res/drawable/splash_image.png, res/drawable/suselogo.png: Remove some image
+  file no more used
+
   * AndroidManifest.xml, gen/net/ildn/fedorait/R.java,
   res/layout/sexysplash.xml, src/net/ildn/ListaPortali.java,
   src/net/ildn/WebContent.java,

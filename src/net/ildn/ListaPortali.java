@@ -24,7 +24,8 @@ public class ListaPortali extends GlobalMenu {
 				R.drawable.debian,
 				R.drawable.fedora,
 				R.drawable.suse,
-				R.drawable.mandriva
+				R.drawable.mandriva,
+				R.drawable.mageia				
 		};
 		
 		for (int i=0; i<portalidisponibili.length; i++) {	
@@ -55,6 +56,9 @@ public class ListaPortali extends GlobalMenu {
 			break;
 		case 3:
 			mainIntent = new Intent(getString(R.string.portalemandriva));
+			break;
+		case 4:
+			mainIntent = new Intent(getString(R.string.portalemageia));
 			break;
 		default:
 			mainIntent = new Intent(getString(R.string.portalefedora));

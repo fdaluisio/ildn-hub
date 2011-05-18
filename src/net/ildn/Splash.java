@@ -59,14 +59,6 @@ public class Splash extends Activity {
 	    	 public void onItemClick(AdapterView parent, View v, int position, long id) {
 	            Intent mainIntent = null;
 	            switch (position) {
-				case 5:
-					Toast.makeText(Splash.this, "Portale non ancora attivo", Toast.LENGTH_SHORT).show();
-					break;
-				case 3:
-					mainIntent = new Intent(getString(R.string.portalemandriva));
-					startActivity(mainIntent);
-					finish();
-					break;
 				case 0:
 					mainIntent = new Intent(getString(R.string.portaledebian));
 					startActivity(mainIntent);
@@ -77,13 +69,23 @@ public class Splash extends Activity {
 					startActivity(mainIntent);
 					finish();
 					break;
-				case 4:
-					Toast.makeText(Splash.this, "Portale non ancora attivo", Toast.LENGTH_SHORT).show();
-					break;
 				case 2:
 					mainIntent = new Intent(getString(R.string.portalesuse));
 					startActivity(mainIntent);
 					finish();
+					break;
+				case 3:
+					mainIntent = new Intent(getString(R.string.portalemandriva));
+					startActivity(mainIntent);
+					finish();
+					break;
+				case 4:
+					mainIntent = new Intent(getString(R.string.portalemageia));
+					startActivity(mainIntent);
+					finish();
+					break;
+				case 5:
+					Toast.makeText(Splash.this, "Portale non ancora attivo", Toast.LENGTH_SHORT).show();
 					break;
 				default:
 					mainIntent = new Intent(getString(R.string.portalefedora));
@@ -104,8 +106,7 @@ public class Splash extends Activity {
 	             R.drawable.fedora,
 	             R.drawable.suse,
 	             R.drawable.mandriva,
-	             R.drawable.gentoo,
-	    		 R.drawable.slack
+	             R.drawable.mageia
 	     };
 	
 	     private ImageView[] mImages;

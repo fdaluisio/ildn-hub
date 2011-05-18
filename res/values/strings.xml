@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+
 	<!-- Risorse comuni -->
     <string name="splashtextildn">ILDN</string>
     <string name="splashtext">Italian Linux Distro Network</string>
@@ -16,6 +17,7 @@
     <string name="listaportaliactivity">Attività Lista Portali</string>
     
     <!-- Etichette di cosmesi varie -->
+    <string name="share">Condividi via</string>
     <string name="loading">Caricamento...</string>
     <string name="pluginswitch">Opzioni</string>
     <string name="sceglicosaabilitare">Scegli cosa abilitare</string>
@@ -73,6 +75,17 @@
     <string name="mandrivafeedforum">http://www.mandrakeitalia.org/forum/active/feed</string>
     <string name="mandrivafeedguide">http://www.mandrakeitalia.org/guide/feed/</string>
     <string name="mandrivafeedblog">http://www.mandrakeitalia.org/blog/feed/</string>
+
+    <!-- Risorse per mageiaitalia.org -->
+    <string name="intestazionemageia">mageiaitalia.org</string>
+    <string name="portalemageia">net.ildn.mageiaitalia.MageiaItalia</string>
+    <color name="mageia">#a5cfed</color>
+    <string name="mageiacolor">#a5cfed</string>
+    <string name="mageiaactivity">Attività MageiaItalia</string>    
+    <string name="mageiafeednews">http://www.mageiaitalia.org/news/feed/</string>
+    <string name="mageiafeedforum">http://www.mageiaitalia.org/forum/active/feed</string>
+    <string name="mageiafeedguide">http://www.mageiaitalia.org/guide/feed/</string>
+    <string name="mageiafeedblog">http://www.mageiaitalia.org/blog/feed/</string>
     
     <!-- Risorse per altri -->
 </resources>

@@ -10,6 +10,9 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.Window;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
@@ -23,6 +26,10 @@ public class WebContent extends Activity {
 	static final int PROGRESS_DIALOG = 0;
 	public static final String PREFS_NAME = "ildnPreference";
 	private String fonte = "nothing";
+	private String baseurl = "";
+	private String titlecontent = "";
+	
+	private static final String LOG_ID ="ILDN-Hub - WebContent";;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -36,11 +43,14 @@ public class WebContent extends Activity {
 		Intent launchingIntent = getIntent();
 		String content = launchingIntent.getData().toString();
 		// Imposto sorgente del contenuto web
-		fonte = launchingIntent.getExtras().getString("fonte");		
-		Log.i(fonte + " - WebContent", "uri activity: " + content);
-		Uri baseurl = Uri.parse(launchingIntent.getExtras().getString("baseurl"));
-		Log.i(fonte + " - WebContent","Host: " + baseurl.getHost());
-		//Log.i(fonte + " - WebContent", "tag description: " + launchingIntent.getExtras().getString("description"));
+		fonte = launchingIntent.getExtras().getString("fonte");
+		titlecontent = launchingIntent.getExtras().getString("titlecontent");
+		Log.i(LOG_ID, "uri activity: " + content);
+		this.baseurl = launchingIntent.getExtras().getString("baseurl");
+		Log.i(LOG_ID, "baseurl from intent: " + this.baseurl);
+		Uri baseurl = Uri.parse(this.baseurl);
+		Log.i(LOG_ID,"Host: " + baseurl.getHost());
+
 		
 		/*
 		 * Carico impostazioni personalizzate per i plugin flash e js
@@ -158,13 +168,39 @@ public class WebContent extends Activity {
 		this.fonte = fonte;
 	}
 
-	/* (non-Javadoc)
-	 * @see android.app.Activity#onStop()
-	 */
+	public void share(String subject,String text) {
+		 final Intent intent = new Intent(Intent.ACTION_SEND);
+
+		 intent.setType("text/plain");
+		 intent.putExtra(Intent.EXTRA_SUBJECT, titlecontent);
+		 intent.putExtra(Intent.EXTRA_TEXT, baseurl);
+
+		 startActivity(Intent.createChooser(intent, getString(R.string.share)));
+	}
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		MenuInflater inflater = getMenuInflater();
+		inflater.inflate(R.menu.webcontentmenu, menu);
+		return true;
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		
+		switch (item.getItemId()) {
+
+		case R.id.sharemenu:
+			share("ILDN-Hub", "ILDN-Hub text to share");
+			return true;
+		default:
+			return super.onOptionsItemSelected(item);
+		}
+	}
+			
 	@Override
 	protected void onStop() {
 		Log.i(fonte + " - WebContent", "onStop ");
-		// TODO Auto-generated method stub
 		super.onStop();
 	}
 

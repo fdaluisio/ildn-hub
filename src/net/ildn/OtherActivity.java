@@ -31,6 +31,7 @@ public class OtherActivity extends GlobalMenu {
 		o_list.add(this.getString(R.string.intestazionefedora));
 		o_list.add(this.getString(R.string.intestazionesuse));
 		o_list.add(this.getString(R.string.intestazionemandriva));
+		o_list.add(this.getString(R.string.intestazionemageia));
 		// aggiungere qui gli altri siti del network
 
 		o_list.trimToSize();
@@ -96,6 +97,18 @@ public class OtherActivity extends GlobalMenu {
 						this,
 						"Sei già su "
 								+ this.getString(R.string.intestazionemandriva),
+						Toast.LENGTH_SHORT).show();
+			return;
+		case 4:
+			// Controllo per ovviare di andare su una fonte quando già ci sono
+			if (!this.getString(R.string.intestazionemageia).contains(fonte)) {
+				finish();
+				startActivity(new Intent(getString(R.string.portalemageia)));
+			} else
+				Toast.makeText(
+						this,
+						"Sei già su "
+								+ this.getString(R.string.intestazionemageia),
 						Toast.LENGTH_SHORT).show();
 			return;
 		default:

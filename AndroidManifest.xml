@@ -44,6 +44,16 @@
           </intent-filter>
         </activity>       
           
+        <activity android:name="net.ildn.mageiaitalia.MageiaItalia" 
+       			  android:label="@string/mageiaactivity"
+          		  android:theme="@android:style/Theme.NoTitleBar">
+          <intent-filter>
+                <action android:name="net.ildn.mageiaitalia.MageiaItalia" />
+                <category android:name="android.intent.category.DEFAULT" />
+          </intent-filter>
+        </activity>
+          
+          
         <activity android:name=".NewsActivity"
                   android:label="@string/newsactivity">
         </activity>
@@ -57,6 +67,10 @@
         </activity>
         
         <activity android:name="net.ildn.mandrivaitalia.MandrivaNewsActivity"
+                  android:label="@string/newsactivity">
+        </activity>
+
+        <activity android:name="net.ildn.mageiaitalia.MageiaNewsActivity"
                   android:label="@string/newsactivity">
         </activity>
 
@@ -76,6 +90,10 @@
                   android:label="@string/forumactivity">
         </activity>
         
+        <activity android:name="net.ildn.mageiaitalia.MageiaForumActivity"
+                  android:label="@string/forumactivity">
+        </activity>
+        
         <activity android:name=".GuideActivity"
                   android:label="@string/guideactivity">
         </activity>
@@ -92,6 +110,10 @@
                   android:label="@string/guideactivity">
         </activity>
         
+        <activity android:name="net.ildn.mageiaitalia.MageiaGuideActivity"
+                  android:label="@string/guideactivity">
+        </activity>
+        
         <activity android:name=".BlogActivity"
                   android:label="@string/blogactivity">
         </activity>
@@ -105,6 +127,10 @@
         </activity>
         
         <activity android:name="net.ildn.mandrivaitalia.MandrivaBlogActivity"
+                  android:label="@string/blogactivity">
+        </activity>
+        
+        <activity android:name="net.ildn.mageiaitalia.MageiaBlogActivity"
                   android:label="@string/blogactivity">
         </activity>
         

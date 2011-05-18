@@ -52,6 +52,10 @@ public class SexySplash extends Activity {
 						.equalsIgnoreCase(getString(R.string.intestazionemandriva))) {
 					mainIntent = new Intent(getString(R.string.portalemandriva));
 				}
+				else if (portaledefault
+						.equalsIgnoreCase(getString(R.string.intestazionemageia))) {
+					mainIntent = new Intent(getString(R.string.portalemageia));
+				}
 				// Aggiungere qui altri portali
 				else
 					mainIntent = new Intent(getString(R.string.portalefedora));

@@ -1,3 +1,48 @@
+2011-06-26  fdaluisio <fdaluisio@fedoraproject.org>
+
+  * .classpath, gen/net/ildn/fedorait/R.java, libs/bitlyj-2.0.0.jar,
+  res/drawable/ildn_small.png, src/net/ildn/WebContent.java,
+  src/net/ildn/debianitalia/DebianBlogActivity.java,
+  src/net/ildn/debianitalia/DebianForumActivity.java,
+  src/net/ildn/debianitalia/DebianGuideActivity.java,
+  src/net/ildn/debianitalia/DebianNewsActivity.java,
+  src/net/ildn/fedorait/BlogActivity.java,
+  src/net/ildn/fedorait/ForumActivity.java,
+  src/net/ildn/fedorait/GuideActivity.java,
+  src/net/ildn/mageiaitalia/MageiaBlogActivity.java,
+  src/net/ildn/mageiaitalia/MageiaForumActivity.java,
+  src/net/ildn/mageiaitalia/MageiaGuideActivity.java,
+  src/net/ildn/mageiaitalia/MageiaNewsActivity.java,
+  .../ildn/mandrivaitalia/MandrivaBlogActivity.java,
+  .../ildn/mandrivaitalia/MandrivaForumActivity.java,
+  .../ildn/mandrivaitalia/MandrivaGuideActivity.java,
+  .../ildn/mandrivaitalia/MandrivaNewsActivity.java,
+  src/net/ildn/suseitalia/SuseBlogActivity.java,
+  src/net/ildn/suseitalia/SuseForumActivity.java,
+  src/net/ildn/suseitalia/SuseGuideActivity.java,
+  src/net/ildn/suseitalia/SuseNewsActivity.java: Aggiunta integrazione con
+  bit.ly per la condivisione via Twitter e Facebook
+
+  * res/drawable/mageia.png, res/layout/cover.xml, res/layout/feednewsrow.xml,
+  res/values/strings.xml, src/net/ildn/NewsAdapter.java,
+  src/net/ildn/Splash.java: Rimossa icona ildn in splash, aggiunta immagine al
+  fianco di un contenuto
+
+2011-05-18  fdaluisio <fdaluisio@fedoraproject.org>
+
+  * AndroidManifest.xml, ChangeLog, gen/net/ildn/fedorait/R.java,
+  res/drawable/mageia.png, res/layout/webview.xml, res/menu/webcontentmenu.xml,
+  res/values/strings.xml, src/net/ildn/ListaPortali.java,
+  src/net/ildn/OtherActivity.java, src/net/ildn/SexySplash.java,
+  src/net/ildn/Splash.java, src/net/ildn/WebContent.java,
+  src/net/ildn/fedorait/NewsActivity.java,
+  src/net/ildn/mageiaitalia/MageiaBlogActivity.java,
+  src/net/ildn/mageiaitalia/MageiaForumActivity.java,
+  src/net/ildn/mageiaitalia/MageiaGuideActivity.java,
+  src/net/ildn/mageiaitalia/MageiaItalia.java,
+  src/net/ildn/mageiaitalia/MageiaNewsActivity.java: Aggiunto Portale
+  MageiaItalia.org
+
 2011-04-06  fdaluisio <fdaluisio@fedoraproject.org>
 
   * ChangeLog, res/drawable/debianlogo.png, res/drawable/fedoralogo.png,

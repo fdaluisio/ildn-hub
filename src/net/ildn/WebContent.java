@@ -18,6 +18,9 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Toast;
+import com.rosaloves.bitlyj.Url;
+import static com.rosaloves.bitlyj.Bitly.*;
+
 
 public class WebContent extends Activity {
 
@@ -173,8 +176,20 @@ public class WebContent extends Activity {
 
 		 intent.setType("text/plain");
 		 intent.putExtra(Intent.EXTRA_SUBJECT, titlecontent);
-		 intent.putExtra(Intent.EXTRA_TEXT, baseurl);
-
+		 Url bitlyurl = null;
+		 try {
+			 bitlyurl = as("vasheek", "R_011c063dcec95586aaeb5f7ef7b1c8b0").call(shorten(baseurl));
+			 
+		 }
+		 catch (Exception e) {
+			// TODO: handle exception
+			 e.printStackTrace();
+		}
+		 if (bitlyurl != null) {
+			 intent.putExtra(Intent.EXTRA_TEXT, titlecontent + " - " + bitlyurl.getShortUrl());
+		 }
+		 else 
+			 intent.putExtra(Intent.EXTRA_TEXT, titlecontent + " - " + baseurl);
 		 startActivity(Intent.createChooser(intent, getString(R.string.share)));
 	}
 	

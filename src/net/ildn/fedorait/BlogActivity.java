@@ -28,6 +28,7 @@ public class BlogActivity extends GlobalMenu {
 		showme.putExtra("description", messages.get(position).getDescription());
 		showme.putExtra("fonte", this.getString(R.string.intestazionefedora));
 		showme.putExtra("baseurl", messages.get(position).getLink().toString());
+		showme.putExtra("titlecontent", messages.get(position).getTitle());
 		startActivity(showme);
 	}
 

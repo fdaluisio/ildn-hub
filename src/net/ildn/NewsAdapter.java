@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class NewsAdapter extends ArrayAdapter<NewsItemRow> {
@@ -41,7 +42,8 @@ public class NewsAdapter extends ArrayAdapter<NewsItemRow> {
 		Log.i("NewsAdapter", "processo posizione: " + position);
 		NewsItemRow o = items.get(position);
 		if (o != null) {
-			TextView creatore = (TextView) v.findViewById(R.id.newscreatore);
+			ImageView icon = (ImageView) v.findViewById(R.id.newsicon);
+ 			TextView creatore = (TextView) v.findViewById(R.id.newscreatore);
 			TextView titolo = (TextView) v.findViewById(R.id.newstitolo);
 			TextView data = (TextView) v
 					.findViewById(R.id.newsdatapublicazione);
@@ -53,16 +55,24 @@ public class NewsAdapter extends ArrayAdapter<NewsItemRow> {
 			data.setTypeface(Typeface.DEFAULT_BOLD);
 			//meglio uno switch?			
 			if (fonte.equalsIgnoreCase(cx.getString(R.string.intestazionefedora))) {
+				icon.setImageResource(R.drawable.fedora);
 				titolo.setTextColor(cx.getResources().getColor(R.color.fedora));
 			}
 			else if (fonte.equalsIgnoreCase(cx.getString(R.string.intestazionedebian))) {
+				icon.setImageResource(R.drawable.debian);
 				titolo.setTextColor(cx.getResources().getColor(R.color.debian));
 			}
 			else if (fonte.equalsIgnoreCase(cx.getString(R.string.intestazionesuse))) {
+				icon.setImageResource(R.drawable.suse);
 				titolo.setTextColor(cx.getResources().getColor(R.color.suse));
 			}
 			else if (fonte.equalsIgnoreCase(cx.getString(R.string.intestazionemandriva))) {
+				icon.setImageResource(R.drawable.mandriva);
 				titolo.setTextColor(cx.getResources().getColor(R.color.mandriva));
+			}
+			else if (fonte.equalsIgnoreCase(cx.getString(R.string.intestazionemageia))) {
+				icon.setImageResource(R.drawable.mageia);
+				titolo.setTextColor(cx.getResources().getColor(R.color.mageia));
 			}
 			else 
 				titolo.setTextColor(cx.getResources().getColor(R.color.fedora));

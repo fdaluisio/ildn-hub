@@ -79,8 +79,8 @@
     <!-- Risorse per mageiaitalia.org -->
     <string name="intestazionemageia">mageiaitalia.org</string>
     <string name="portalemageia">net.ildn.mageiaitalia.MageiaItalia</string>
-    <color name="mageia">#a5cfed</color>
-    <string name="mageiacolor">#a5cfed</string>
+    <color name="mageia">#73b3e2</color>
+    <string name="mageiacolor">#73b3e2</string>
     <string name="mageiaactivity">Attività MageiaItalia</string>    
     <string name="mageiafeednews">http://www.mageiaitalia.org/news/feed/</string>
     <string name="mageiafeedforum">http://www.mageiaitalia.org/forum/active/feed</string>

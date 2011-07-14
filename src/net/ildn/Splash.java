@@ -15,7 +15,6 @@ import android.graphics.Paint;
 import android.graphics.PorterDuff.Mode;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.Shader.TileMode;
-import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,7 +45,7 @@ public class Splash extends Activity {
 		 }
 		 
 		 setContentView(R.layout.cover);
-		 Toast.makeText(this, "ILDN: Italian Linux Distro Network", Toast.LENGTH_LONG).show();
+		 //Toast.makeText(this, "ILDN: Italian Linux Distro Network", Toast.LENGTH_LONG).show();
 	     CoverFlow coverFlow = (CoverFlow)findViewById(R.id.coverflow);
 	     coverFlow.setAdapter(new ImageAdapter(this));
 	     ImageAdapter coverImageAdapter =  new ImageAdapter(this);

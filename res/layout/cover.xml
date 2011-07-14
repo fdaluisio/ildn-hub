@@ -3,14 +3,23 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:gravity="center"
+    android:gravity="center_vertical"
     >
+    <ImageView 
+    android:layout_width="140px" 
+    android:layout_height="90px" 
+    android:src="@drawable/ildn" 
+    android:id="@+id/logosplash" 
+    android:layout_gravity="center_horizontal"
+    android:layout_marginBottom="15dp"	
+    android:layout_marginTop="15dp"
+    ></ImageView>
     
 	<net.ildn.CoverFlow
 	    android:id="@+id/coverflow"
 	    android:layout_width="fill_parent" 
 	    android:layout_height="wrap_content" 
-	    android:layout_gravity="center"
+
 	/>
 	
 </LinearLayout>

@@ -52,7 +52,7 @@ public class Splash extends Activity {
 	     ImageAdapter coverImageAdapter =  new ImageAdapter(this);
 	     coverImageAdapter.createReflectedImages();
 	     coverFlow.setAdapter(coverImageAdapter);
-	     coverFlow.setSpacing(-15);
+	     coverFlow.setSpacing(-40);
 	     coverFlow.setSelection(1, true);
 	     coverFlow.setAnimationDuration(1000);
 

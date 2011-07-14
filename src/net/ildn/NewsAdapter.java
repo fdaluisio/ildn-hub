@@ -45,14 +45,11 @@ public class NewsAdapter extends ArrayAdapter<NewsItemRow> {
 			ImageView icon = (ImageView) v.findViewById(R.id.newsicon);
  			TextView creatore = (TextView) v.findViewById(R.id.newscreatore);
 			TextView titolo = (TextView) v.findViewById(R.id.newstitolo);
-			TextView data = (TextView) v
-					.findViewById(R.id.newsdatapublicazione);
-			TextView descrizione = (TextView) v
-					.findViewById(R.id.newscontenuto);
-			creatore.setText("Creato da:  " + o.getCreatore());
-			creatore.setTypeface(Typeface.DEFAULT_BOLD);
+			TextView data = (TextView) v.findViewById(R.id.newsdatapublicazione);			
+			
+			creatore.setText("Creato da:  " + o.getCreatore());			
 			data.setText("Pubblicato:  " + o.getDatapub());
-			data.setTypeface(Typeface.DEFAULT_BOLD);
+			
 			//meglio uno switch?			
 			if (fonte.equalsIgnoreCase(cx.getString(R.string.intestazionefedora))) {
 				icon.setImageResource(R.drawable.fedora);
@@ -76,9 +73,8 @@ public class NewsAdapter extends ArrayAdapter<NewsItemRow> {
 			}
 			else 
 				titolo.setTextColor(cx.getResources().getColor(R.color.fedora));
-			titolo.setText(o.getTitle());			
-			descrizione.setText(o.getDescription());
-			descrizione.setVisibility(View.GONE);
+			titolo.setText(o.getTitle());	
+			titolo.setTypeface(Typeface.DEFAULT_BOLD);
 		}
 		return v;
 	}

@@ -54,4 +54,13 @@ public class GuideActivity extends GlobalMenu {
 		super.onStart();
 		Log.i(LOG_ID, "Richiamato onStart()");
 	}
+	
+	@Override
+	protected void onRestart() {
+		super.onRestart();
+		String urlFeed = this.getString(R.string.fedorafeedguide);
+		dataRetriever = new DataRetriever(urlFeed, this);
+		showProgressDialog();
+		dataRetriever.start();
+	}
 }

@@ -52,4 +52,12 @@ public class ForumActivity extends GlobalMenu {
 		
 	}
 
+	@Override
+	protected void onRestart() {
+		super.onRestart();
+		String urlFeed = this.getString(R.string.fedorafeedforum);
+		dataRetriever = new DataRetriever(urlFeed, this);
+		showProgressDialog();
+		dataRetriever.start();
+	}
 }

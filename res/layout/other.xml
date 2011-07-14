@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<AbsoluteLayout 
-	android:id="@+id/absoluteother"
-	android:layout_width="fill_parent"
-	android:layout_height="fill_parent" 
-	xmlns:android="http://schemas.android.com/apk/res/android" >
-
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center_vertical"
+    >
 	<ListView 
 		android:id="@android:id/android:list"
 		android:layout_width="fill_parent" 
@@ -12,4 +12,4 @@
 		android:background="#000000">
 	</ListView>
 	
-</AbsoluteLayout>
+</LinearLayout>

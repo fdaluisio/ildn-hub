@@ -1,4 +1,25 @@
+2011-07-14  fdaluisio <fdaluisio@fedoraproject.org>
+
+  * res/layout/cover.xml, src/net/ildn/Splash.java: Revert Splash to coverflow
+  and image
+
+  * src/net/ildn/fedorait/BlogActivity.java,
+  src/net/ildn/fedorait/ForumActivity.java,
+  src/net/ildn/fedorait/GuideActivity.java,
+  src/net/ildn/fedorait/NewsActivity.java: insert a reload of dataretriver when
+  occured a onRestart lifecycle event of activity
+
+  * AndroidManifest.xml: Add support for move to sd feature
+
+  * res/layout/cover.xml, res/layout/feednewsrow.xml, res/values/strings.xml,
+  src/net/ildn/NewsAdapter.java, src/net/ildn/Splash.java: Cosmesi varia
+
 2011-06-26  fdaluisio <fdaluisio@fedoraproject.org>
+
+  * .gitignore, bin/ildn-hub.apk: Add ildn-hub.apk
+
+  * ChangeLog, res/drawable/gentoo.png, res/drawable/slack.png: Changelog
+  update
 
   * .classpath, gen/net/ildn/fedorait/R.java, libs/bitlyj-2.0.0.jar,
   res/drawable/ildn_small.png, src/net/ildn/WebContent.java,
